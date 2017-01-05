@@ -1,0 +1,55 @@
+/// VIDEO SLIDES
+
+.slide video			{	display: none; }
+
+.video-wrap			{	z-index: 325;
+						cursor: pointer; }
+
+video				{	width: 100%; height: auto;  }
+
+.slide-active .thumb{	display: none; }
+
+
+/// VIDEO EMBEDS	
+
+.video-normal		{	border: none; }
+
+
+.slide-active a.playbutton	
+					{	display: none; }
+
+a.playbutton			{	z-index: 300; display: block;
+						position: absolute; right: 5px; bottom: 5px; 
+						width: 12px; height: 12px; border: none; }
+a.playbutton.loading{	background: url(images/loading.gif); }
+a.playbutton.play	{	background: url(images/play.png); }
+a.playbutton.pause	{	background: url(images/pause.png); }
+						
+a.playbutton:link,
+a.playbutton:visited{	opacity: 1.0; }
+a.playbutton:hover	{	opacity: 0.5; }
+
+
+/// VIDEO CONTROLS
+
+.play				{	display: block; position: absolute; 
+						top: 0; left: 0; bottom: 0; right: 0;
+						width: 0; height: 0; background: white; margin: auto; }
+.play,
+.entry .play			{	border-width: 1.25*$v-margin; border-style: solid;
+						border-radius: 1.5*$v-margin; }
+						
+.play-triangle		{	z-index: 10; display: block; position: absolute;
+						top: -$h-margin/3; left: -$h-margin/6;
+						border-color: transparent transparent transparent $black; 
+						border-style: solid;
+						border-width: $h-margin/3 $h-margin/2; }
+
+.entry .play:link,
+.entry .play:visited{	border-color: white; }
+
+.entry .play:hover	{	border-color: $accent; }
+.entry .play:hover .play-triangle
+					{	border-left-color: white; }
+
+.playing .play		{	display: none; }
