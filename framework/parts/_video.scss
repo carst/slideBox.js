@@ -1,6 +1,7 @@
 /// VIDEO SLIDES
 
-.slide video			{	display: none; }
+.slide video			{	opacity: 0; }
+.slide-detail video	{	opacity: 1; }
 
 .video-wrap			{	z-index: 325;
 						cursor: pointer; }
