@@ -112,7 +112,7 @@ function loadSlideBgs() {
 	
 	function setSlideBg($slide) {
 		
-		var $img = $slide.is('img') ? $slide : $slide.find('img'),
+		var $img = $slide.is('img') ? $slide : $slide.children('img'),
 			bgSrc,
 			fullImg = new Image(),
 			loaded = false;
