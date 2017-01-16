@@ -8,8 +8,11 @@
 .slide				{	background-repeat: no-repeat;
 						background-size: contain;
 						background-position: center center;
-						//transition: all 250ms ease-out;
-						pointer-events: all;
+						//transition: all 250ms ease-out; 
+						pointer-events: none; }
+
+.slide:not(.slide-detail)
+					{	pointer-events: auto;
 						cursor: zoom-in; }
 
 .has-bg img			{	opacity: 0; }
@@ -63,10 +66,11 @@
 .slide-next			{	left: 100%; }
 
 .slide-active		{	left: 2*$gutter;
-						opacity: 1 !important;
+						opacity: 1 !important; }
 
-						cursor: zoom-out;
-						pointer-events: auto; }
+.box-zoomed .slide-active
+					{	pointer-events: auto;
+						cursor: zoom-out; }
 
 .loading				{	background-image: url($imgdir+'spiffygif_30x30.gif') !important;
 						background-size: auto; }
