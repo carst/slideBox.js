@@ -454,7 +454,8 @@ function initSlides(config) {
 			if (config.debug) {
 				//console.log($box);
 				//console.log($box.attr('class'));
-				console.log('\nboxIndex: '+boxIndex+', '+boxProps.slideCount+', dir : ' + dir);
+				console.log('\nboxIndex: '+boxIndex+', '+boxProps.slideCount+'slides,\n' + 
+					'dir : ' + dir + ', allowChange: ' + allowChange);
 			}
 			
 			if (allowChange) {
@@ -639,13 +640,14 @@ function initSlides(config) {
 		
 		if (config.slideBoxClick) {
 			$(document).on('click', '.slide-box:not(.box-zoomed)', function (event) {
-				
+		
 				if (config.debug) console.log('\nslide-box clicked');
 				loadBox($(this)); 
 			});
 		} else {
 			$(document).on('click', '.slide:not(.slide-active)', function (event) {
-				
+		// ZOOM IN
+
 				event.stopPropagation();
 				if (config.debug) console.log('\nslide clicked');
 				toggleZoom($(this));
@@ -653,7 +655,8 @@ function initSlides(config) {
 		}
 		
 		$(document).on('click', '.slide-active:not(.slide-carousel)', function (event) {
-			
+		// ZOOM OUT
+		
 			var $slide = $(this),
 				archiveUrl = $slide.data('archiveUrl');
 			
@@ -666,7 +669,8 @@ function initSlides(config) {
 		.on('swiperight', prevSlide)
 		.on('swipeleft', nextSlide)
 		.on('click', '.close', function (event) {
-
+		// ZOOM OUT
+		
 			event.preventDefault();
 			toggleZoom();
 			
@@ -707,8 +711,6 @@ function initSlides(config) {
 
 		getActiveBox();
 		loadSlideBgs();
-		//loadSingleSlide();
-		//setControlIndex();
 	}
 	/*
 	if (query.indexOf('zoom') > -1) {

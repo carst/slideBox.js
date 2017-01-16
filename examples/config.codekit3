@@ -193,6 +193,15 @@
 		"oF": 0,
 		"opt": 0
 		},
+	"\/scripts\/codeformatting-min.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/scripts\/min\/codeformatting-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/scripts\/slidebox-min.js": {
 		"ft": 64,
 		"mi": 1,
