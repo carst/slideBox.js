@@ -2,21 +2,12 @@
 "AAInfo": "This is a CodeKit 3 project config file. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. Doing so will cause CodeKit to crash and\/or corrupt your project. I know it looks like JSON, but it is *not*. Many numbers in this file are 64-bit long long bitFlags, which JSON does not support. These numbers *cannot* be treated as discrete values and if you attempt to parse this file as standard JSON with any public JSON parser, these values will be corrupted. This file is not backwards-compatible with CodeKit 1 or 2. For more information, see https:\/\/codekitapp.com\/",
 "buildSteps": [
 	{
-		"itemsToProcess": [
-			"\/_slidebox.scss",
-			"\/slidebox.js"
-			],
-		"name": "New \"Process Certain Files\" Step",
-		"stepType": 0,
-		"uuidString": "75BED69F-A84E-4E70-AF7D-7811BEFB0EFD"
-		},
-	{
 		"name": "Process All Remaining Files and Folders",
 		"stepType": 1,
-		"uuidString": "AA587158-8002-4598-B43E-099ABA7F131B"
+		"uuidString": "8E63400E-777B-4519-8C44-B615B983534C"
 		}
 	],
-"creatorBuild": "25479",
+"creatorBuild": "25504",
 "files": {
 	"\/_slidebox.scss": {
 		"aP": 0,
@@ -31,6 +22,59 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/examples\/_example.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/css\/_example.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/examples\/_slidebox-dist.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/css\/_slidebox-dist.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/examples\/codeformatting.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/examples\/min\/codeformatting-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/examples\/slidebox-dist.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/examples\/min\/slidebox-dist-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/examples\/smoothscroll.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/examples\/min\/smoothscroll-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/jquery.scrollLock.simple.js": {
 		"ft": 64,
 		"mi": 1,
@@ -40,7 +84,16 @@
 		"sC": 1,
 		"tS": 0
 		},
-	"\/parts\/_carousel.scss": {
+	"\/lazysizes.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/min\/lazysizes-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/sass\/_carousel.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -53,7 +106,7 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/parts\/_config.scss": {
+	"\/sass\/_config.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -66,7 +119,7 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/parts\/_controls.scss": {
+	"\/sass\/_controls.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -79,7 +132,7 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/parts\/_main.scss": {
+	"\/sass\/_main.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -92,7 +145,7 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/parts\/_specifics.scss": {
+	"\/sass\/_specifics.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -105,7 +158,7 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/parts\/_video.scss": {
+	"\/sass\/_video.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -165,7 +218,7 @@
 	},
 "projectAttributes": {
 	"creationDate": 499776958,
-	"displayValue": "SlideBox",
+	"displayValue": "slideBox",
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "defaultFrameworkIcon",
 	"lastBuiltDate": 505215518
@@ -816,6 +869,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"no-await-in-loop": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-bitwise": {
 			"active": 0,
 			"optionString": "{'allow': ['~'], 'int32Hint': true}"
@@ -1355,6 +1412,10 @@
 		"prefer-const": {
 			"active": 0,
 			"optionString": "{'destructuring': 'any', 'ignoreReadBeforeAssign': false}"
+			},
+		"prefer-destructuring": {
+			"active": 0,
+			"optionString": "{'array': true, 'object': true}, {'enforceForRenamedProperties': false}"
 			},
 		"prefer-numeric-literals": {
 			"active": 0,
