@@ -7,113 +7,224 @@
 		"uuidString": "9E3B660A-03A2-467B-A361-724C96884EC4"
 		}
 	],
-"creatorBuild": "25479",
+"creatorBuild": "25504",
 "files": {
-	"\/css\/example.css": {
-		"aP": 0,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 2,
-		"oAP": "\/css\/example-min.css",
-		"oF": 0,
-		"oS": 0
-		},
-	"\/css\/slidebox.css": {
-		"aP": 0,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 2,
-		"oAP": "\/css\/slidebox-min.css",
-		"oF": 0,
-		"oS": 0
-		},
-	"\/css\/slidebox.css.map": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/css\/slidebox.css.map",
-		"oF": 0
-		},
-	"\/images\/arrow-long-left.png": {
+	"\/assets\/images\/arrow-long-left.png": {
 		"ft": 32768,
 		"iS": 286,
 		"oA": 0,
-		"oAP": "\/images\/arrow-long-left.png",
+		"oAP": "\/assets\/images\/arrow-long-left.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/images\/arrow-long-left.svg": {
+	"\/assets\/images\/arrow-long-left.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/images\/arrow-long-left.svg",
+		"oAP": "\/assets\/images\/arrow-long-left.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/images\/arrow-long-left@2x.png": {
+	"\/assets\/images\/arrow-long-left@2x.png": {
 		"ft": 32768,
 		"iS": 527,
 		"oA": 0,
-		"oAP": "\/images\/arrow-long-left@2x.png",
+		"oAP": "\/assets\/images\/arrow-long-left@2x.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/images\/arrow-long-right.png": {
+	"\/assets\/images\/arrow-long-right.png": {
 		"ft": 32768,
 		"iS": 281,
 		"oA": 0,
-		"oAP": "\/images\/arrow-long-right.png",
+		"oAP": "\/assets\/images\/arrow-long-right.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/images\/arrow-long-right.svg": {
+	"\/assets\/images\/arrow-long-right.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/images\/arrow-long-right.svg",
+		"oAP": "\/assets\/images\/arrow-long-right.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/images\/arrow-long-right@2x.png": {
+	"\/assets\/images\/arrow-long-right@2x.png": {
 		"ft": 32768,
 		"iS": 510,
 		"oA": 0,
-		"oAP": "\/images\/arrow-long-right@2x.png",
+		"oAP": "\/assets\/images\/arrow-long-right@2x.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/images\/blank.gif": {
+	"\/assets\/images\/blank.gif": {
 		"ft": 4194304,
 		"iS": 43,
 		"oA": 0,
-		"oAP": "\/images\/blank.gif",
+		"oAP": "\/assets\/images\/blank.gif",
 		"oF": 0,
-		"opt": 1
+		"opt": 0
 		},
-	"\/images\/widget-close-over.svg": {
+	"\/assets\/images\/widget-close-over.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/images\/widget-close-over.svg",
+		"oAP": "\/assets\/images\/widget-close-over.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/images\/widget-close.svg": {
+	"\/assets\/images\/widget-close.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/images\/widget-close.svg",
+		"oAP": "\/assets\/images\/widget-close.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
+		},
+	"\/assets\/slidebox-min.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/assets\/min\/slidebox-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/assets\/slidebox-min.js.map": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/slidebox-min.js.map",
+		"oF": 0
+		},
+	"\/assets\/slidebox.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/assets\/slidebox-min.css",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/assets\/slidebox.css.map": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/slidebox.css.map",
+		"oF": 0
+		},
+	"\/demo\/demo.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/demo\/demo-min.css",
+		"oF": 1,
+		"oS": 0
+		},
+	"\/demo\/media\/0829-moment-spaet.jpg": {
+		"ft": 16384,
+		"iS": 0,
+		"oA": 0,
+		"oAP": "\/demo\/media\/0829-moment-spaet.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/demo\/media\/Bibliotheek-011.jpg": {
+		"ft": 16384,
+		"iS": 472571,
+		"oA": 0,
+		"oAP": "\/demo\/media\/Bibliotheek-011.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/demo\/media\/Container-im-Hamburger-Hafen.jpg": {
+		"ft": 16384,
+		"iS": 0,
+		"oA": 0,
+		"oAP": "\/demo\/media\/Container-im-Hamburger-Hafen.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/demo\/media\/filip_dujardin_06.jpg": {
+		"ft": 16384,
+		"iS": 132831,
+		"oA": 0,
+		"oAP": "\/demo\/media\/filip_dujardin_06.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/demo\/media\/Horst-Buchholz-in-One-Two-Three-1961.jpg": {
+		"ft": 16384,
+		"iS": 0,
+		"oA": 0,
+		"oAP": "\/demo\/media\/Horst-Buchholz-in-One-Two-Three-1961.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/demo\/media\/island.jpg": {
+		"ft": 16384,
+		"iS": 0,
+		"oA": 0,
+		"oAP": "\/demo\/media\/island.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/demo\/media\/Paris,-Texas-1-50-40.jpg": {
+		"ft": 16384,
+		"iS": 0,
+		"oA": 0,
+		"oAP": "\/demo\/media\/Paris,-Texas-1-50-40.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/demo\/media\/Projet-pour-un-Jardin.jpg": {
+		"ft": 16384,
+		"iS": 0,
+		"oA": 0,
+		"oAP": "\/demo\/media\/Projet-pour-un-Jardin.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/demo\/media\/Zermatt.jpg": {
+		"ft": 16384,
+		"iS": 0,
+		"oA": 0,
+		"oAP": "\/demo\/media\/Zermatt.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/demo\/scripts\/codeformatting-min.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/demo\/scripts\/min\/codeformatting-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/demo\/scripts\/smoothscroll-min.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/demo\/scripts\/min\/smoothscroll-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/demo\/scripts\/smoothscroll-min.js.map": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/demo\/scripts\/smoothscroll-min.js.map",
+		"oF": 0
 		},
 	"\/index.html": {
 		"ft": 8192,
@@ -121,129 +232,23 @@
 		"oAP": "\/index.html",
 		"oF": 0
 		},
-	"\/media\/0829-moment-spaet.jpg": {
-		"ft": 16384,
-		"iS": 105271,
+	"\/README.md": {
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"eLB": 0,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
 		"oA": 0,
-		"oAP": "\/media\/0829-moment-spaet.jpg",
+		"oAP": "\/README.html",
 		"oF": 0,
-		"opt": 0
-		},
-	"\/media\/Bibliotheek-011.jpg": {
-		"ft": 16384,
-		"iS": 472571,
-		"oA": 0,
-		"oAP": "\/media\/Bibliotheek-011.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/media\/Container-im-Hamburger-Hafen.jpg": {
-		"ft": 16384,
-		"iS": 559816,
-		"oA": 0,
-		"oAP": "\/media\/Container-im-Hamburger-Hafen.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/media\/filip_dujardin_06.jpg": {
-		"ft": 16384,
-		"iS": 132831,
-		"oA": 0,
-		"oAP": "\/media\/filip_dujardin_06.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/media\/Horst-Buchholz-in-One-Two-Three-1961.jpg": {
-		"ft": 16384,
-		"iS": 218708,
-		"oA": 0,
-		"oAP": "\/media\/Horst-Buchholz-in-One-Two-Three-1961.jpg",
-		"oF": 0,
-		"opt": 1
-		},
-	"\/media\/island.jpg": {
-		"ft": 16384,
-		"iS": 468395,
-		"oA": 0,
-		"oAP": "\/media\/island.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/media\/Paris,-Texas-1-50-40.jpg": {
-		"ft": 16384,
-		"iS": 216940,
-		"oA": 0,
-		"oAP": "\/media\/Paris,-Texas-1-50-40.jpg",
-		"oF": 0,
-		"opt": 1
-		},
-	"\/media\/Projet-pour-un-Jardin.jpg": {
-		"ft": 16384,
-		"iS": 304008,
-		"oA": 0,
-		"oAP": "\/media\/Projet-pour-un-Jardin.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/media\/Zermatt.jpg": {
-		"ft": 16384,
-		"iS": 448189,
-		"oA": 0,
-		"oAP": "\/media\/Zermatt.jpg",
-		"oF": 0,
-		"opt": 0
-		},
-	"\/scripts\/codeformatting-min.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/scripts\/min\/codeformatting-min-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
-	"\/scripts\/slidebox-min.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 1,
-		"oAP": "\/scripts\/min\/slidebox-min-min.js",
-		"oF": 1,
-		"sC": 1,
-		"tS": 0
-		},
-	"\/scripts\/slidebox-min.js.map": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/scripts\/slidebox-min.js.map",
-		"oF": 1
-		},
-	"\/scripts\/smoothscroll-min.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/scripts\/min\/smoothscroll-min-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
-	"\/scripts\/smoothscroll-min.js.map": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/scripts\/smoothscroll-min.js.map",
-		"oF": 0
-		},
-	"\/src\/_example.scss": {
-		"aP": 1,
-		"bl": 1,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/css\/example.css",
-		"oF": 3,
-		"oS": 3,
-		"uL": 1
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
 		},
 	"\/src\/_slidebox-dist.scss": {
 		"aP": 1,
@@ -253,91 +258,255 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 0,
-		"oAP": "\/css\/slidebox.css",
+		"oAP": "\/assets\/slidebox.css",
 		"oF": 3,
 		"oS": 3,
 		"uL": 1
 		},
-	"\/src\/codeformatting.js": {
+	"\/src\/_slidebox.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/css\/_slidebox.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/src\/demo\/_demo.scss": {
+		"aP": 1,
+		"bl": 1,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/demo\/_demo.css",
+		"oF": 3,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/src\/demo\/codeformatting.js": {
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/scripts\/codeformatting-min.js",
+		"oAP": "\/demo\/scripts\/codeformatting-min.js",
 		"oF": 2,
 		"sC": 1,
 		"tS": 0
 		},
-	"\/src\/media\/Container-im-Hamburger-Hafen.jpg": {
+	"\/src\/demo\/media\/Container-im-Hamburger-Hafen.jpg": {
 		"ft": 16384,
 		"iS": 3128732,
 		"oA": 0,
-		"oAP": "\/src\/media\/Container-im-Hamburger-Hafen.jpg",
+		"oAP": "\/src\/demo\/media\/Container-im-Hamburger-Hafen.jpg",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/src\/media\/Horst-Buchholz-in-One,-Two,-Three-(1961).jpg": {
+	"\/src\/demo\/media\/Horst-Buchholz-in-One,-Two,-Three-(1961).jpg": {
 		"ft": 16384,
-		"iS": 218708,
+		"iS": 205801,
 		"oA": 0,
-		"oAP": "\/src\/media\/Horst-Buchholz-in-One,-Two,-Three-(1961).jpg",
+		"oAP": "\/src\/demo\/media\/Horst-Buchholz-in-One,-Two,-Three-(1961).jpg",
 		"oF": 0,
-		"opt": 1
+		"opt": 0
 		},
-	"\/src\/media\/island.jpeg": {
+	"\/src\/demo\/media\/island.jpeg": {
 		"ft": 16384,
 		"iS": 3666874,
 		"oA": 0,
-		"oAP": "\/src\/media\/island.jpg",
+		"oAP": "\/src\/demo\/media\/island.jpg",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/src\/media\/Misty-train-station.png": {
+	"\/src\/demo\/media\/Misty-train-station.png": {
 		"ft": 32768,
 		"iS": 2401927,
 		"oA": 0,
-		"oAP": "\/src\/media\/Misty-train-station.png",
+		"oAP": "\/src\/demo\/media\/Misty-train-station.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/src\/media\/Paris,-Texas-1:50:40.png": {
+	"\/src\/demo\/media\/Paris,-Texas-1:50:40.png": {
 		"ft": 32768,
-		"iS": 2592232,
+		"iS": 2040169,
 		"oA": 0,
-		"oAP": "\/src\/media\/Paris,-Texas-1:50:40.png",
+		"oAP": "\/src\/demo\/media\/Paris,-Texas-1:50:40.png",
 		"oF": 0,
-		"opt": 1
+		"opt": 0
 		},
-	"\/src\/media\/Zermatt.png": {
+	"\/src\/demo\/media\/Zermatt.png": {
 		"ft": 32768,
 		"iS": 2063628,
 		"oA": 0,
-		"oAP": "\/src\/media\/Zermatt.png",
+		"oAP": "\/src\/demo\/media\/Zermatt.png",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/src\/media\/Zürich.jpeg": {
+	"\/src\/demo\/media\/Zürich.jpeg": {
 		"ft": 16384,
 		"iS": 165968,
 		"oA": 0,
-		"oAP": "\/src\/media\/Zürich.jpg",
+		"oAP": "\/src\/demo\/media\/Zürich.jpg",
 		"oF": 0,
 		"opt": 0
+		},
+	"\/src\/demo\/smoothscroll.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/demo\/scripts\/smoothscroll-min.js",
+		"oF": 2,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/src\/graphics\/arrow-long-left.ai": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/src\/graphics\/arrow-long-left.ai",
+		"oF": 0
+		},
+	"\/src\/graphics\/arrow-long-right.ai": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/src\/graphics\/arrow-long-right.ai",
+		"oF": 0
+		},
+	"\/src\/graphics\/widget-close-over.ai": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/src\/graphics\/widget-close-over.ai",
+		"oF": 0
+		},
+	"\/src\/graphics\/widget-close.ai": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/src\/graphics\/widget-close.ai",
+		"oF": 0
+		},
+	"\/src\/jquery.scrollLock.simple.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/src\/min\/jquery.scrollLock.simple-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/src\/lazysizes.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/src\/min\/lazysizes-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/src\/sass\/_carousel.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/src\/css\/_carousel.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/src\/sass\/_config.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/src\/css\/_config.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/src\/sass\/_controls.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/src\/css\/_controls.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/src\/sass\/_main.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/src\/css\/_main.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/src\/sass\/_specifics.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/src\/css\/_specifics.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/src\/sass\/_video.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/src\/css\/_video.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
 		},
 	"\/src\/slidebox-dist.js": {
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/scripts\/slidebox-min.js",
+		"oAP": "\/assets\/slidebox-min.js",
 		"oF": 2,
 		"sC": 1,
 		"tS": 0
 		},
-	"\/src\/smoothscroll.js": {
+	"\/src\/slidebox-util.js": {
 		"ft": 64,
 		"mi": 1,
-		"oA": 0,
-		"oAP": "\/scripts\/smoothscroll-min.js",
-		"oF": 2,
+		"oA": 1,
+		"oAP": "\/src\/min\/slidebox-util-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/src\/slidebox.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/src\/min\/slidebox-min.js",
+		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		}
@@ -348,7 +517,7 @@
 	},
 "projectAttributes": {
 	"creationDate": 505215237,
-	"displayValue": "slideBox examples",
+	"displayValue": "slideBox GitHub",
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "brackets_brown"
 	},
@@ -998,6 +1167,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"no-await-in-loop": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-bitwise": {
 			"active": 0,
 			"optionString": "{'allow': ['~'], 'int32Hint': true}"
@@ -1537,6 +1710,10 @@
 		"prefer-const": {
 			"active": 0,
 			"optionString": "{'destructuring': 'any', 'ignoreReadBeforeAssign': false}"
+			},
+		"prefer-destructuring": {
+			"active": 0,
+			"optionString": "{'array': true, 'object': true}, {'enforceForRenamedProperties': false}"
 			},
 		"prefer-numeric-literals": {
 			"active": 0,

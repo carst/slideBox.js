@@ -6,21 +6,29 @@
 	<meta charset="utf-8">
 	<title>slideBox.js examples</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="stylesheet" href="css/example.css" type="text/css">
-	<link rel="stylesheet" href="css/slidebox.css" type="text/css">
+	<link rel="stylesheet" href="demo/demo.css" type="text/css">
+	<link rel="stylesheet" href="assets/slidebox.css" type="text/css">
 </head>
 <body>
 
 <h1>slideBox.js</h1>
 
-<p>An JavaScript/jQuery framework for easy creation of carousels and media galleries with slideshows. Features:
+<p>An JavaScript/jQuery framework for easy creation of both lightbox-style media galleries and carousels. Features:</p>
 	
 	<ul>
-	<li>– Create a gallery by wrapping your images in an element with cla
-	<li>– Lazyloads images and video through lazysizes.js.
-	</li>
+	<li>Groups together your media in a lightbox or carousel.</li>
+	<li>Autorotates your carousels.</li>
+	<li>Carousel pager support.</li>
+	<li>Minimal styling.</li>
+	<li>Basic CSS transitions between slides.</li>
+	<li>Lazyloads images and video through lazysizes.js.</li>
+	</ul>
 	
 	<p>See <a href="http://slidebox.crst.nl" rel="external">slidebox.crst.nl</a> for examples.</p>
+
+<h2>Setup</h2>
+
+	<p>Create a gallery by wrapping your images in an element with class <code>slidebox</code>.</p>
 
 <h2>slideBox.js Examples</h2>
 <nav><ol>
@@ -47,15 +55,15 @@
 	<p>Provide your own CSS for layout. Some basic CSS for grid layout is included in <code>css/example.css</code>.<br>This example uses <code>background-size: cover</code> to create image blocks equal in size.</p>
 	
 	<div class="slide-box box-active ex-1-grid">
-		<img class="slide" src="media/Container-im-Hamburger-Hafen.jpg" alt="Container-im-Hamburger-Hafen" width="4003" height="2251" />
-		<img class="slide" src="media/Projet-pour-un-Jardin.jpg" alt="Projet-pour-un-Jardin" width="640" height="959" />
-		<img class="slide" src="media/Zermatt.jpg" alt="Zermatt" width="1500" height="1075" />
-		<img class="slide" src="media/filip_dujardin_06.jpg" alt="filip_dujardin_06" width="818" height="816" />
-		<img class="slide" src="media/Horst-Buchholz-in-One-Two-Three-1961.jpg" alt="Horst-Buchholz-in-One,-Two,-Three-(1961)" width="1000" height="1000" />
-		<img class="slide" src="media/island.jpg" alt="island" width="2400" height="2900" />
-		<img class="slide" src="media/0829-moment-spaet.jpg" alt="0829-moment-spaet" width="880" height="479" />
-		<img class="slide" src="media/Bibliotheek-011.jpg" alt="Bibliotheek-011" width="1500" height="1000" />
-		<img class="slide" src="media/Paris,-Texas-1-50-40.jpg" alt="Paris,-Texas-1:50:40" width="1920" height="1200" />
+		<img class="slide" src="demo/media/Container-im-Hamburger-Hafen.jpg" alt="Container-im-Hamburger-Hafen" width="4003" height="2251" />
+		<img class="slide" src="demo/media/Projet-pour-un-Jardin.jpg" alt="Projet-pour-un-Jardin" width="640" height="959" />
+		<img class="slide" src="demo/media/Zermatt.jpg" alt="Zermatt" width="1500" height="1075" />
+		<img class="slide" src="demo/media/filip_dujardin_06.jpg" alt="filip_dujardin_06" width="818" height="816" />
+		<img class="slide" src="demo/media/Horst-Buchholz-in-One-Two-Three-1961.jpg" alt="Horst-Buchholz-in-One,-Two,-Three-(1961)" width="1000" height="1000" />
+		<img class="slide" src="demo/media/island.jpg" alt="island" width="2400" height="2900" />
+		<img class="slide" src="demo/media/0829-moment-spaet.jpg" alt="0829-moment-spaet" width="880" height="479" />
+		<img class="slide" src="demo/media/Bibliotheek-011.jpg" alt="Bibliotheek-011" width="1500" height="1000" />
+		<img class="slide" src="demo/media/Paris,-Texas-1-50-40.jpg" alt="Paris,-Texas-1:50:40" width="1920" height="1200" />
 	
 		<div class="controls">
 			<a class="widget widget-hide close" href="#">Close</a>
@@ -78,11 +86,11 @@
 	<p>If you need a fixed width set it explicitly in your CSS.</p>
 	
 	<div class="slide-box slide-box-carousel box-active ex-2-carousel"> <!-- auto-loop -->
-		<img class="slide slide-carousel slide-active" src="media/Container-im-Hamburger-Hafen.jpg" alt="Container-im-Hamburger-Hafen" width="4003" height="2251" />
-		<img class="slide slide-carousel slide-next" src="media/Projet-pour-un-Jardin.jpg" alt="Projet-pour-un-Jardin" width="640" height="959" />
-		<img class="slide slide-carousel" src="media/Zermatt.jpg" alt="Zermatt" width="1500" height="1075" />
-		<img class="slide slide-carousel" src="media/filip_dujardin_06.jpg" alt="filip_dujardin_06" width="818" height="816" />
-		<img class="slide slide-carousel" src="media/Horst-Buchholz-in-One-Two-Three-1961.jpg" alt="Horst-Buchholz-in-One,-Two,-Three-(1961)" width="1000" height="1000" />
+		<img class="slide slide-carousel slide-active" src="demo/media/Container-im-Hamburger-Hafen.jpg" alt="Container-im-Hamburger-Hafen" width="4003" height="2251" />
+		<img class="slide slide-carousel slide-next" src="demo/media/Projet-pour-un-Jardin.jpg" alt="Projet-pour-un-Jardin" width="640" height="959" />
+		<img class="slide slide-carousel" src="demo/media/Zermatt.jpg" alt="Zermatt" width="1500" height="1075" />
+		<img class="slide slide-carousel" src="demo/media/filip_dujardin_06.jpg" alt="filip_dujardin_06" width="818" height="816" />
+		<img class="slide slide-carousel" src="demo/media/Horst-Buchholz-in-One-Two-Three-1961.jpg" alt="Horst-Buchholz-in-One,-Two,-Three-(1961)" width="1000" height="1000" />
 	
 		<div class="controls">
 			<a class="widget widget-hide close" href="#">Close</a>
@@ -101,8 +109,8 @@
 </div>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script type="text/javascript" src="scripts/slidebox-min.js"></script>
-<script type="text/javascript" src="scripts/codeformatting-min.js"></script>
-<script type="text/javascript" src="scripts/smoothscroll-min.js"></script>
+<script type="text/javascript" src="assets/slidebox-min.js"></script>
+<script type="text/javascript" src="demo/scripts/codeformatting-min.js"></script>
+<script type="text/javascript" src="demo/scripts/smoothscroll-min.js"></script>
 </body>
 </html>
