@@ -1,1 +1,0 @@
-/Users/carst/Dropbox/Library/Code/Modules/SlideBox/GitHub/src/slidebox.js

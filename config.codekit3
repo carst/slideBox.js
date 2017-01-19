@@ -120,6 +120,16 @@
 		"oAP": "\/assets\/slidebox.css.map",
 		"oF": 0
 		},
+	"\/demo\/_demo.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/demo\/_demo-min.css",
+		"oF": 0,
+		"oS": 0
+		},
 	"\/demo\/demo.css": {
 		"aP": 0,
 		"bl": 0,
