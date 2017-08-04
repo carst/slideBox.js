@@ -304,6 +304,10 @@ function initSlides(config) {
 			boxProps.prevSlide = prev >= 0 ? $boxSlides.eq(prev) : $boxSlides.eq(lastSlide);
 			boxProps.nextSlide = next <= lastSlide ? $boxSlides.eq(next) : $boxSlides.eq(0);
 			
+			if (boxProps.slideCount === 1) {
+				boxProps.nextSlide = $();
+				boxProps.prevSlide = $();
+			}
 		}
 	
 		//getActiveSlide(boxIndex);
@@ -373,7 +377,7 @@ function initSlides(config) {
 
 		// CLEAN UP
 		boxProps.slides
-			.removeClass('slide-prev slide-next')
+			.removeClass('slide-prev slide-next playing')
 			.not($slide).removeClass('slide-active');
 		
 		// PAUSE ALL VIDEOS
@@ -529,7 +533,8 @@ function initSlides(config) {
 		
 		var $box,
 			boxIndex,
-			boxProps;
+			boxProps,
+			$slideActive;
 		
 		if (typeof $slide !== 'undefined') {
 		/// ZOOM IN
@@ -563,6 +568,9 @@ function initSlides(config) {
 			if (config.debug) console.log('Zoom Out');
 			
 			$box = $boxZoomed;
+			$slideActive = $box.find('.slide-active');
+			if (config.debug) console.log('slideActive:' + $slideActive.attr('class'));
+			
 			$(document).trigger('zoomOut');
 
 			boxIndex = $boxes.index($box);
@@ -577,9 +585,18 @@ function initSlides(config) {
 			$.scrollLock(false);
 			
 			toggleControls(boxIndex);
-
+			
 			//removeHash();
 			if (config.setPath) loadState(initialState);
+			
+			//scrollToTarget($slideActive);
+			//$(document).scrollTop( $slideActive.offset().top );
+			//$('html,body').scrollTop( $slideActive.offset().top );
+			$('html,body').animate({
+				scrollTop: $slideActive.offset().top - 60
+			}, 0);
+		
+			$(document).trigger('zoomedOut');
 			
 		}
 		
@@ -645,7 +662,7 @@ function initSlides(config) {
 				loadBox($(this)); 
 			});
 		} else {
-			$(document).on('click', '.slide:not(.slide-active)', function (event) {
+			$(document).on('click', '.slide:not(.slide-active,.slide.playing)', function (event) {
 		// ZOOM IN
 
 				event.stopPropagation();
@@ -654,7 +671,7 @@ function initSlides(config) {
 			});
 		}
 		
-		$(document).on('click', '.slide-active:not(.slide-carousel)', function (event) {
+		$(document).on('click', '.slide-active:not(.slide-carousel,.slide.playing)', function (event) {
 		// ZOOM OUT
 		
 			var $slide = $(this),

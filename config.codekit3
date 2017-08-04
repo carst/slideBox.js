@@ -7,7 +7,7 @@
 		"uuidString": "9E3B660A-03A2-467B-A361-724C96884EC4"
 		}
 	],
-"creatorBuild": "25504",
+"creatorBuild": "25849",
 "files": {
 	"\/assets\/images\/arrow-long-left.png": {
 		"ft": 32768,
@@ -15,7 +15,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/images\/arrow-long-left.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/images\/arrow-long-left.svg": {
 		"ft": 2097152,
@@ -33,7 +36,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/images\/arrow-long-left@2x.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/images\/arrow-long-right.png": {
 		"ft": 32768,
@@ -41,7 +47,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/images\/arrow-long-right.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/images\/arrow-long-right.svg": {
 		"ft": 2097152,
@@ -59,7 +68,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/images\/arrow-long-right@2x.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/images\/blank.gif": {
 		"ft": 4194304,
@@ -68,6 +80,27 @@
 		"oAP": "\/assets\/images\/blank.gif",
 		"oF": 0,
 		"opt": 0
+		},
+	"\/assets\/images\/player-pause.png": {
+		"ft": 32768,
+		"iS": 151,
+		"oA": 0,
+		"oAP": "\/assets\/images\/player-pause.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/images\/player-pause.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/player-pause.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
 		},
 	"\/assets\/images\/widget-close-over.svg": {
 		"ft": 2097152,
@@ -146,7 +179,9 @@
 		"oA": 0,
 		"oAP": "\/demo\/media\/0829-moment-spaet.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/demo\/media\/Bibliotheek-011.jpg": {
 		"ft": 16384,
@@ -154,7 +189,9 @@
 		"oA": 0,
 		"oAP": "\/demo\/media\/Bibliotheek-011.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/demo\/media\/Container-im-Hamburger-Hafen.jpg": {
 		"ft": 16384,
@@ -162,7 +199,9 @@
 		"oA": 0,
 		"oAP": "\/demo\/media\/Container-im-Hamburger-Hafen.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/demo\/media\/filip_dujardin_06.jpg": {
 		"ft": 16384,
@@ -170,7 +209,9 @@
 		"oA": 0,
 		"oAP": "\/demo\/media\/filip_dujardin_06.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/demo\/media\/Horst-Buchholz-in-One-Two-Three-1961.jpg": {
 		"ft": 16384,
@@ -178,7 +219,9 @@
 		"oA": 0,
 		"oAP": "\/demo\/media\/Horst-Buchholz-in-One-Two-Three-1961.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/demo\/media\/island.jpg": {
 		"ft": 16384,
@@ -186,7 +229,9 @@
 		"oA": 0,
 		"oAP": "\/demo\/media\/island.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/demo\/media\/Paris,-Texas-1-50-40.jpg": {
 		"ft": 16384,
@@ -194,7 +239,9 @@
 		"oA": 0,
 		"oAP": "\/demo\/media\/Paris,-Texas-1-50-40.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/demo\/media\/Projet-pour-un-Jardin.jpg": {
 		"ft": 16384,
@@ -202,7 +249,9 @@
 		"oA": 0,
 		"oAP": "\/demo\/media\/Projet-pour-un-Jardin.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/demo\/media\/Zermatt.jpg": {
 		"ft": 16384,
@@ -210,7 +259,9 @@
 		"oA": 0,
 		"oAP": "\/demo\/media\/Zermatt.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/demo\/scripts\/codeformatting-min.js": {
 		"ft": 64,
@@ -260,6 +311,12 @@
 		"rFN": 0,
 		"uCM": 0
 		},
+	"\/src\/.sass-cache\/22a7288834f691802ee44b9b58e413e01d045344\/_slidebox-dist.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/src\/.sass-cache\/22a7288834f691802ee44b9b58e413e01d045344\/_slidebox-dist.scssc",
+		"oF": 0
+		},
 	"\/src\/_slidebox-dist.scss": {
 		"aP": 1,
 		"bl": 1,
@@ -271,19 +328,6 @@
 		"oAP": "\/assets\/slidebox.css",
 		"oF": 3,
 		"oS": 3,
-		"uL": 1
-		},
-	"\/src\/_slidebox.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/css\/_slidebox.css",
-		"oF": 0,
-		"oS": 0,
 		"uL": 1
 		},
 	"\/src\/demo\/_demo.scss": {
@@ -314,7 +358,9 @@
 		"oA": 0,
 		"oAP": "\/src\/demo\/media\/Container-im-Hamburger-Hafen.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/src\/demo\/media\/Horst-Buchholz-in-One,-Two,-Three-(1961).jpg": {
 		"ft": 16384,
@@ -322,7 +368,9 @@
 		"oA": 0,
 		"oAP": "\/src\/demo\/media\/Horst-Buchholz-in-One,-Two,-Three-(1961).jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/src\/demo\/media\/island.jpeg": {
 		"ft": 16384,
@@ -330,7 +378,9 @@
 		"oA": 0,
 		"oAP": "\/src\/demo\/media\/island.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/src\/demo\/media\/Misty-train-station.png": {
 		"ft": 32768,
@@ -338,7 +388,10 @@
 		"oA": 0,
 		"oAP": "\/src\/demo\/media\/Misty-train-station.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/src\/demo\/media\/Paris,-Texas-1:50:40.png": {
 		"ft": 32768,
@@ -346,7 +399,10 @@
 		"oA": 0,
 		"oAP": "\/src\/demo\/media\/Paris,-Texas-1:50:40.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/src\/demo\/media\/Zermatt.png": {
 		"ft": 32768,
@@ -354,7 +410,10 @@
 		"oA": 0,
 		"oAP": "\/src\/demo\/media\/Zermatt.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/src\/demo\/media\/Zürich.jpeg": {
 		"ft": 16384,
@@ -362,7 +421,9 @@
 		"oA": 0,
 		"oAP": "\/src\/demo\/media\/Zürich.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/src\/demo\/smoothscroll.js": {
 		"ft": 64,
@@ -385,6 +446,12 @@
 		"oAP": "\/src\/graphics\/arrow-long-right.ai",
 		"oF": 0
 		},
+	"\/src\/graphics\/player-stop.ai": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/src\/graphics\/player-stop.ai",
+		"oF": 0
+		},
 	"\/src\/graphics\/widget-close-over.ai": {
 		"ft": 8192,
 		"oA": 2,
@@ -396,24 +463,6 @@
 		"oA": 2,
 		"oAP": "\/src\/graphics\/widget-close.ai",
 		"oF": 0
-		},
-	"\/src\/jquery.scrollLock.simple.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 1,
-		"oAP": "\/src\/min\/jquery.scrollLock.simple-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
-	"\/src\/lazysizes.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 1,
-		"oAP": "\/src\/min\/lazysizes-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
 		},
 	"\/src\/sass\/_carousel.scss": {
 		"aP": 0,
@@ -499,25 +548,7 @@
 		"oA": 0,
 		"oAP": "\/assets\/slidebox-min.js",
 		"oF": 2,
-		"sC": 1,
-		"tS": 0
-		},
-	"\/src\/slidebox-util.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 1,
-		"oAP": "\/src\/min\/slidebox-util-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
-	"\/src\/slidebox.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 1,
-		"oAP": "\/src\/min\/slidebox-min.js",
-		"oF": 0,
-		"sC": 1,
+		"sC": 0,
 		"tS": 0
 		}
 	},
@@ -1201,6 +1232,10 @@
 			"active": 1,
 			"optionString": ""
 			},
+		"no-compare-neg-zero": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-cond-assign": {
 			"active": 1,
 			"optionString": "'except-parens'"
@@ -1401,6 +1436,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"no-multi-assign": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-multi-spaces": {
 			"active": 0,
 			"optionString": "{'exceptions': {'Property': true, 'BinaryExpression': false, 'VariableDeclarator': false, 'ImportDeclaration': false}}"
@@ -1478,6 +1517,10 @@
 			"optionString": ""
 			},
 		"no-proto": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-prototype-builtins": {
 			"active": 0,
 			"optionString": ""
 			},
@@ -1677,6 +1720,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"nonblock-statement-body-position": {
+			"active": 0,
+			"optionString": "'beside'"
+			},
 		"object-curly-newline": {
 			"active": 0,
 			"optionString": "{'ObjectExpression': {'multiline': true}, 'ObjectPattern': {'multiline': true}}"
@@ -1728,6 +1775,10 @@
 		"prefer-numeric-literals": {
 			"active": 0,
 			"optionString": ""
+			},
+		"prefer-promise-reject-errors": {
+			"active": 0,
+			"optionString": "{'allowEmptyReject': false}"
 			},
 		"prefer-rest-params": {
 			"active": 0,
@@ -1822,6 +1873,10 @@
 			"optionString": ""
 			},
 		"template-curly-spacing": {
+			"active": 0,
+			"optionString": "'never'"
+			},
+		"template-tag-spacing": {
 			"active": 0,
 			"optionString": "'never'"
 			},
@@ -2268,7 +2323,8 @@
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 0
+		"autoOutputPathStyle": 0,
+		"quality": 100
 		},
 	"languageDefaultsJS": {
 		"autoOutputAction": 0,
@@ -2291,14 +2347,6 @@
 		"autoOutputPathStyle": 0,
 		"orderOutput": 0,
 		"outputStyle": 1
-		},
-	"languageDefaultsJSX": {
-		"autoOutputAction": 0,
-		"autoOutputPathFilenamePattern": "*.js",
-		"autoOutputPathRelativePath": "",
-		"autoOutputPathReplace1": "jsx",
-		"autoOutputPathReplace2": "js",
-		"autoOutputPathStyle": 0
 		},
 	"languageDefaultsKIT": {
 		"autoOutputAction": 0,
@@ -2361,7 +2409,9 @@
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 0
+		"autoOutputPathStyle": 0,
+		"optimizerType": 1,
+		"quality": 100
 		},
 	"languageDefaultsPUG": {
 		"autoOutputAction": 0,
@@ -2446,6 +2496,7 @@
 		},
 	"languageDefaultsUserDefined": [
 		],
+	"overrideExternalServerCSS": 0,
 	"previewPathAddition": "",
 	"skippedFoldersString": "log, _logs, logs, _cache, cache, \/storage\/framework\/sessions, node_modules",
 	"sourceFolderName": "source",

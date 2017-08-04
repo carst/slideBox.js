@@ -91,11 +91,12 @@ function setScroll($box) {
 }
 
 
-function loadSlideBgs() {
+function loadSlideBgs($targetBox) {
 	
 	var config = {
-			slide 		: '.slide'
-		};
+			slide 		: '.slide, .load-bg'
+		},
+		imgDir = typeof imgDirDefault !== 'undefined' ? imgDirDefault : 'images/';
 	
 	function findBgSrc($img) {
 		
@@ -117,8 +118,10 @@ function loadSlideBgs() {
 			fullImg = new Image(),
 			loaded = false;
 		
+		if ($slide.is('a')) $img = $slide.find('img');
+		
 		function loadHandler() {
-
+			
 			/*
 			if (loaded) { 
 				return;
@@ -134,7 +137,7 @@ function loadSlideBgs() {
 				.css('background-image', 'url(' + bgSrc + ')')
 				.addClass('has-bg');
 
-			if ($slide.is('img')) $img.attr('src', 'images/blank.gif');
+			if ($slide.is('img')) $img.attr('src', imgDir + 'blank.gif');
 			
 		}
 		
@@ -151,7 +154,9 @@ function loadSlideBgs() {
 				
 	}
 	
-	$('.box-active').find(config.slide).each(function() {
+	var $targetBox = $targetBox === undefined ? $('.box-active') : $targetBox;
+	
+	$targetBox.find(config.slide).each(function() {
 		setSlideBg($(this));
 	});
 	
