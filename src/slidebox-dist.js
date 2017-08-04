@@ -1,7 +1,8 @@
 // @codekit-prepend 'slidebox.js'
 
-var debug = true,
-	mobile = false;
+var debug = false,
+	mobile = false,
+	imgDirDefault = 'assets/images/';
 
 $(function () {
 
