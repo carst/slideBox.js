@@ -1,25 +1,32 @@
 $accent: rgb(0, 51, 235);
 
+@import 'fonts';
+
 
 body					{	background-color: #fefefe;
 						margin: 0; padding: 2em;
-						padding-bottom: 12em; }
+						padding-bottom: 2em; }
 body,
 h1,
 h2,
 h3,
 p,
-li					{	font-family: 'Sabon', 'Times', 'Georgia', serif;
-						font-size: 18px;
+li					{	@extend .font-serif;
+						font-size: 21px;
 						line-height: 1.2em; }
 
-h1					{	font-size: 1.3em;
-						color: $accent; }
+h1					{	font-size: 2.3em;
+						color: $accent;
+						text-align: center; }
 
-h2					{	margin-top: 3em;
-						font-size: 1.3em; }
+h2, h3				{	margin-top: 3em; }
+h2					{	font-size: 1.3em; }
+h3					{	font-family: $sans;
+						font-size: 0.9em;
+						text-transform: uppercase;
+						letter-spacing: 0.05em;  }
 
-p					{	width: 37em; }
+p					{	}
 
 ol					{	margin: 0; padding: 0 0 0 1em; }
 
@@ -30,11 +37,25 @@ a:hover				{	color: #222; }
 pre, code			{	background-color: rgb(240,240,240);
 						font-family: 'Menlo', 'Monaco', 'Andale Mono', monospace;
 						font-size: 0.75em; color: rgb(99,33,150); }
-pre					{	width: 46em; box-sizing: border-box;
+pre					{	width: 100%;
+						box-sizing: border-box;
 						padding: 0.5em 1em;
 						tab-size: 4; }
 
 .slide-box			{	margin-top: 2em; }
+
+
+/// STRUCTURE
+
+.article-center		{	width: 30em;
+						margin-left: auto; margin-right: auto;
+						//background-color: red;
+						 }
+.badge				{	width: 75%; height: 0; padding-bottom: 75%;
+						margin: 0 auto;
+						margin-top: -75px; }
+						
+.badge img			{	width: 100%; height: auto; }
 
 /// EXAMPLE 1
 
@@ -42,7 +63,7 @@ $slide-width: percentage(1/3);
 
 .ex-1-grid			{	display: flex;
 						flex-wrap: wrap;
-						width: 37em !important;
+						width: 100% !important;
 
 	.slide:not(.slide-detail)
 					{	width: 33%; height: 0;
@@ -58,4 +79,5 @@ $slide-width: percentage(1/3);
 
 /// EXAMPLE 2
 
-.ex-2-carousel		{	 }
+.ex-2-carousel		{	position: relative; width: 100% !important;
+						padding-bottom: 75% !important; }

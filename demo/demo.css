@@ -1,1 +1,123 @@
-body{background-color:#fefefe;margin:0;padding:2em;padding-bottom:12em}body,h1,h2,h3,p,li{font-family:'Sabon', 'Times', 'Georgia', serif;font-size:18px;line-height:1.2em}h1{font-size:1.3em;color:#0033eb}h2{margin-top:3em;font-size:1.3em}p{width:37em}ol{margin:0;padding:0 0 0 1em}a:link,a:visited{color:#0033eb}a:hover{color:#222}pre,code{background-color:#f0f0f0;font-family:'Menlo', 'Monaco', 'Andale Mono', monospace;font-size:0.75em;color:#632196}pre{width:46em;box-sizing:border-box;padding:0.5em 1em;-moz-tab-size:4;-o-tab-size:4;tab-size:4}.slide-box{margin-top:2em}.ex-1-grid{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;width:37em !important}.ex-1-grid .slide:not(.slide-detail){width:33%;height:0;width:33.3333333333%;position:relative;padding-bottom:33.3333333333%;background-size:cover !important}.ex-1-grid .slide-detail{background-size:contain !important}
+@font-face {
+  font-family: "Sabon Next";
+  src: url("fonts/sabon-next/regular/5a9b7009-6bac-4b26-b5ff-15ea67d4117d.eot?#iefix");
+  src: url("fonts/sabon-next/regular/5a9b7009-6bac-4b26-b5ff-15ea67d4117d.eot?#iefix") format("eot"), url("fonts/sabon-next/regular/d913b226-c0d7-49e2-b231-1fc570fcdc9a.woff2") format("woff2"), url("fonts/sabon-next/regular/9bbfbdbd-1ab0-4d8f-80d8-c690ab217070.woff") format("woff"), url("fonts/sabon-next/regular/35fd1f96-599b-4392-b501-8b8fe5146b1a.ttf") format("truetype"), url("fonts/sabon-next/regular/451477dd-a1aa-48c1-bcf9-27bb631eb04c.svg#451477dd-a1aa-48c1-bcf9-27bb631eb04c") format("svg");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Sabon Next";
+  src: url("fonts/sabon-next/bold/e7cf7dde-4c17-42f1-8570-32fd8d5fd6f0.eot?#iefix");
+  src: url("fonts/sabon-next/bold/e7cf7dde-4c17-42f1-8570-32fd8d5fd6f0.eot?#iefix") format("eot"), url("fonts/sabon-next/bold/533ce8a9-a0a4-4a40-96c5-76aa564a3d7f.woff2") format("woff2"), url("fonts/sabon-next/bold/952c2825-2ba9-448a-8375-492e78886fc9.woff") format("woff"), url("fonts/sabon-next/bold/99f2ba52-d5f4-46b2-bb31-fd4f1f2b8d65.ttf") format("truetype"), url("fonts/sabon-next/bold/c64c09ef-6c2d-46b1-9390-d7e9bfc0fd8f.svg#c64c09ef-6c2d-46b1-9390-d7e9bfc0fd8f") format("svg");
+  font-weight: 700;
+  font-style: normal; }
+
+.font-sans {
+  font-family: "Neue Haas Unica", "Helvetica Neue", "Helvetica", sans-serif; }
+
+.font-serif, body,
+h1,
+h2,
+h3,
+p,
+li {
+  font-family: "Sabon Next", "Sabon", "Times", "Georgia", serif; }
+
+/* Font sizing */
+body {
+  background-color: #fefefe;
+  margin: 0;
+  padding: 2em;
+  padding-bottom: 2em; }
+
+body,
+h1,
+h2,
+h3,
+p,
+li {
+  font-size: 21px;
+  line-height: 1.2em; }
+
+h1 {
+  font-size: 2.3em;
+  color: #0033eb;
+  text-align: center; }
+
+h2, h3 {
+  margin-top: 3em; }
+
+h2 {
+  font-size: 1.3em; }
+
+h3 {
+  font-family: "Neue Haas Unica", "Helvetica Neue", "Helvetica", sans-serif;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em; }
+
+ol {
+  margin: 0;
+  padding: 0 0 0 1em; }
+
+a:link,
+a:visited {
+  color: #0033eb; }
+
+a:hover {
+  color: #222; }
+
+pre, code {
+  background-color: #f0f0f0;
+  font-family: 'Menlo', 'Monaco', 'Andale Mono', monospace;
+  font-size: 0.75em;
+  color: #632196; }
+
+pre {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5em 1em;
+  -moz-tab-size: 4;
+    -o-tab-size: 4;
+       tab-size: 4; }
+
+.slide-box {
+  margin-top: 2em; }
+
+.article-center {
+  width: 30em;
+  margin-left: auto;
+  margin-right: auto; }
+
+.badge {
+  width: 75%;
+  height: 0;
+  padding-bottom: 75%;
+  margin: 0 auto;
+  margin-top: -75px; }
+
+.badge img {
+  width: 100%;
+  height: auto; }
+
+.ex-1-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100% !important; }
+  .ex-1-grid .slide:not(.slide-detail) {
+    width: 33%;
+    height: 0;
+    width: 33.3333333333%;
+    position: relative;
+    padding-bottom: 33.3333333333%;
+    background-size: cover !important; }
+  .ex-1-grid .slide-detail {
+    background-size: contain !important; }
+
+.ex-2-carousel {
+  position: relative;
+  width: 100% !important;
+  padding-bottom: 75% !important; }

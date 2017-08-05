@@ -4,16 +4,33 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>slideBox.js examples</title>
+	<title>slideBox.js</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="stylesheet" href="demo/demo.css" type="text/css">
 	<link rel="stylesheet" href="assets/slidebox.css" type="text/css">
+	
+	<link rel="apple-touch-icon" sizes="512x512" href="http://slidebox.vdmolen.xyz/apple-touch-icon.png">
+
+	<meta property="og:locale" content="en_US">
+	<meta property="og:url" content="http://slidebox.vdmolen.xyz">
+	<meta property="og:title" content="slideBox.js">
+	<meta property="og:description" content="A jQuery plugin for easy creation of both lightbox-style media galleries and carousels.">
+	<meta property="og:image" content="http://slidebox.vdmolen.xyz//images/slideBox-title.png">
+	
+	<meta name="twitter:site" content="@carst">
+	<meta name="twitter:creator" content="@carst">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="http://slidebox.vdmolen.xyz/images/slideBox-title.png">
 </head>
 <body>
 
+<article class="article-main article-center">
+
+<figure class="badge"><img src="/apple-touch-icon.png" alt="icon" width="256" height="256"> </figure>
+
 <h1>slideBox.js</h1>
 
-<p>A jQuery plugin for easy creation of both lightbox-style media galleries and carousels. Features:</p>
+<p>A jQuery plugin for easy creation of both lightbox-style<br>media galleries and carousels. Features:</p>
 	
 	<ul>
 	<li>Groups together your media in a lightbox or carousel.</li>
@@ -24,20 +41,20 @@
 	<li>Lazyloads images and video through lazysizes.js.</li>
 	</ul>
 	
-	<p>See <a href="http://slidebox.vdmolen.xyz" rel="external">slidebox.vdmolen.xyz</a> for setup and examples.</p>
+	<p>See below for setup and examples.</p>
 
 <h2>Setup</h2>
 
-	<p>Create a gallery by wrapping your images in an element with class <code>slidebox</code>.</p>
+	<p>Create a gallery by wrapping your images in an element<br>with class <code>slidebox</code>.</p>
 
-<h2>slideBox.js Examples</h2>
+<h2>Examples</h2>
 <nav><ol>
 	<li><a href="#ex-1-grid">Image Grid with Zoom</a></li>
 	<li><a href="#ex-2-carousel">Carousel</a></li>
 </ol></nav>
 
 <div id="ex-1-grid">
-	<h2>Example 1: Image Grid with Zoom</h2>
+	<h3>Example 1: Image Grid with Zoom</h3>
 	<p>HTML structure</p>
 <pre><code class="codeblock"><!--<div class="slide-box box-active">
 	<img class="slide" src="img1.jpg">
@@ -74,7 +91,7 @@
 </div>
 
 <div id="ex-2-carousel">
-	<h2>Example 2: Carousel</h2>
+	<h3>Example 2: Carousel</h3>
 	<p>Carousels or sliders need explicit dimensions set in CSS.<br>
 	The default <code>slidebox.css</code> provides a responsive width of 33% as a starting point, with an image ratio of 4/3. You can set different dimensions through data attributes on the carousel, <code>data-width</code> and <code>data-ratio</code>:</p>
 	
@@ -107,6 +124,11 @@
 		</ul>
 	</div>
 </div>
+
+
+	<p>...</p>
+	<p><a href="http://vdmolen.xyz"><small>Created by Carst vd. Molen</a></small></p>
+</article>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="assets/slidebox-min.js"></script>
