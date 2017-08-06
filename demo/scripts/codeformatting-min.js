@@ -1,1 +1,0 @@
-function htmlEscape(e){return e.replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/'/g,"&#39;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}function formatCode(){var e=$(".codeblock");e.each(function(){var e=$(this),c=e.html();c=htmlEscape(c.replace("<!--","").replace("-->","").replace("/*","<!--").replace("*/","-->")),e.replaceWith(c)})}$(function(){formatCode()});

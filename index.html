@@ -15,18 +15,18 @@
 	<meta property="og:url" content="http://slidebox.vdmolen.xyz">
 	<meta property="og:title" content="slideBox.js">
 	<meta property="og:description" content="A jQuery plugin for easy creation of both lightbox-style media galleries and carousels.">
-	<meta property="og:image" content="http://slidebox.vdmolen.xyz//images/slideBox-title.png">
+	<meta property="og:image" content="http://slidebox.vdmolen.xyz/assets/images/slideBox-title-card.png">
 	
 	<meta name="twitter:site" content="@carst">
 	<meta name="twitter:creator" content="@carst">
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:image" content="http://slidebox.vdmolen.xyz/images/slideBox-title.png">
+	<meta name="twitter:image" content="http://slidebox.vdmolen.xyz/assets/images/slideBox-title-card.png">
 </head>
 <body>
 
 <article class="article-main article-center">
 
-<figure class="badge"><img src="/apple-touch-icon.png" alt="icon" width="256" height="256"> </figure>
+<figure class="badge"><img src="/assets/images/slideBox-icon.png" alt="icon" width="256" height="192"> </figure>
 
 <h1>slideBox.js</h1>
 
@@ -38,39 +38,41 @@
 	<li>Carousel pager support.</li>
 	<li>Minimal styling.</li>
 	<li>Basic CSS transitions between slides.</li>
-	<li>Lazyloads images and video through lazysizes.js.</li>
+	<li>Lazyloads images and video through <a href="https://github.com/aFarkas/lazysizes" target="_blank">lazysizes.js</a>.</li>
 	</ul>
 	
-	<p>See below for setup and examples.</p>
+	<p>See below for basic setup and examples.<br>Download the distribution from the <a href="https://github.com/carst/slideBox.js">GitHub repository.</a></p>
 
 <h2>Setup</h2>
+	
+<ol>
+	<li>Add <a href="/assets/slidebox.css">slidebox.css</a> to the header of your html.<br>
+	<pre><code class="codeblock"><!--<link rel="stylesheet" href="/assets/slidebox.css" type="text/css"> --></code></pre></li>
 
-	<p>Create a gallery by wrapping your images in an element<br>with class <code>slidebox</code>.</p>
+	<li>Load jQuery in your page, preferably in the footer to optimize load times.<br>
+	<pre><code class="codeblock"><!--<script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript"></script>--></code></pre></li>
 
+	<li>On the next line load <a href="/assets/slidebox-min.js">slidebox-min.js</a>. Then, initialize the slideBox function.<br>
+	<pre><code class="codeblock"><!--<script src="/assets/slidebox-min.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+$(function () {
+	initSlides();
+});
+
+</script>--></code></pre></li>
+	
+	<li>Create a gallery by wrapping your images in an element<br>with class <code>slide-box</code>. See the examples below, and the source of this page.</li>
+</ol>
+	
 <h2>Examples</h2>
 <nav><ol>
 	<li><a href="#ex-1-grid">Image Grid with Zoom</a></li>
 	<li><a href="#ex-2-carousel">Carousel</a></li>
 </ol></nav>
 
-<div id="ex-1-grid">
+<section id="ex-1-grid">
 	<h3>Example 1: Image Grid with Zoom</h3>
-	<p>HTML structure</p>
-<pre><code class="codeblock"><!--<div class="slide-box box-active">
-	<img class="slide" src="img1.jpg">
-	<img class="slide" src="img2.jpg">
-	<img class="slide" src="img3.jpg">
-	/* etcetera */
-</div>--></code></pre>
-	<p>You can also nest the image in another element with a class of <code>slide</code>. For instance:</p>
-	
-<pre><code class="codeblock"><!--<figure class="slide">
-	<img class="slide" src="img1.jpg">
-	<figcaption>The caption</figcaption>
-</figure>--></code></pre>
-	
-	<p>Provide your own CSS for layout. Some basic CSS for grid layout is included in <code>css/example.css</code>.<br>This example uses <code>background-size: cover</code> to create image blocks equal in size.</p>
-	
 	<div class="slide-box box-active ex-1-grid">
 		<img class="slide" src="demo/media/Container-im-Hamburger-Hafen.jpg" alt="Container-im-Hamburger-Hafen" width="4003" height="2251" />
 		<img class="slide" src="demo/media/Projet-pour-un-Jardin.jpg" alt="Projet-pour-un-Jardin" width="640" height="959" />
@@ -83,25 +85,40 @@
 		<img class="slide" src="demo/media/Paris,-Texas-1-50-40.jpg" alt="Paris,-Texas-1:50:40" width="1920" height="1200" />
 	
 		<div class="controls">
-			<a class="widget widget-hide close" href="#">Close</a>
-			<a class="widget widget-hide arrow prev disabled" href="#">Previous</a>
-			<a class="widget widget-hide arrow next" href="#">Next</a>
+			<a href="#" class="close">Close</a>
+			<a href="#" class="prev disabled">Previous</a>
+			<a href="#" class="next">Next</a>
 		</div>
 	</div>
-</div>
 
-<div id="ex-2-carousel">
-	<h3>Example 2: Carousel</h3>
-	<p>Carousels or sliders need explicit dimensions set in CSS.<br>
-	The default <code>slidebox.css</code> provides a responsive width of 33% as a starting point, with an image ratio of 4/3. You can set different dimensions through data attributes on the carousel, <code>data-width</code> and <code>data-ratio</code>:</p>
-	
-<pre><code class="codeblock"><!--<div class="slide-box slide-box-carousel box-active" 
-	data-width="1/3" data-ratio="4/3">
+	<p><abbr>HTML</abbr> structure:</p>
+<pre><code class="codeblock"><!--<div class="slide-box box-active">
 	<img class="slide" src="img1.jpg">
+	<img class="slide" src="img2.jpg">
+	<img class="slide" src="img3.jpg">
+	/* etcetera */
+	
+	<div class="controls">
+		<a href="#" class="close">Close</a>
+		<a href="#" class="prev disabled">Previous</a>
+		<a href="#" class="next">Next</a>
+	</div>
 </div>--></code></pre>
+
+	<p>You can nest images one element deep. The parent element needs to have a class of <code>slide</code>. For instance:</p>
 	
-	<p>If you need a fixed width set it explicitly in your CSS.</p>
+<pre><code class="codeblock"><!--<figure class="slide">
+	<img class="slide" src="img1.jpg">
+	<figcaption>The caption</figcaption>
+</figure>--></code></pre>
 	
+	<p>Provide your own <abbr>CSS</abbr> for layout. The example below uses <code>background-size: cover</code> to create image blocks equal in size. Find the <abbr>CSS</abbr> included in <a href="/demo/demo.css">/demo/demo.css</a>.</p>
+	
+</section>
+
+<section id="ex-2-carousel">
+	<h3>Example 2: Carousel</h3>
+
 	<div class="slide-box slide-box-carousel box-active ex-2-carousel"> <!-- auto-loop -->
 		<img class="slide slide-carousel slide-active" src="demo/media/Container-im-Hamburger-Hafen.jpg" alt="Container-im-Hamburger-Hafen" width="4003" height="2251" />
 		<img class="slide slide-carousel slide-next" src="demo/media/Projet-pour-un-Jardin.jpg" alt="Projet-pour-un-Jardin" width="640" height="959" />
@@ -110,20 +127,50 @@
 		<img class="slide slide-carousel" src="demo/media/Horst-Buchholz-in-One-Two-Three-1961.jpg" alt="Horst-Buchholz-in-One,-Two,-Three-(1961)" width="1000" height="1000" />
 	
 		<div class="controls">
-			<a class="widget widget-hide close" href="#">Close</a>
-			<a class="widget widget-hide arrow prev disabled" href="#">Previous</a>
-			<a class="widget widget-hide arrow next" href="#">Next</a>
+			<a href="#" class="close">Close</a>
+			<a href="#" class="prev disabled">Previous</a>
+			<a href="#" class="next">Next</a>
 		</div>
 		
 		<ul class="pager pager-inline">			
-			<li><a class="number 1 active" href="#" title="1">1</a></li>			
-			<li><a class="number 2" href="#" title="2">2</a></li>			
-			<li><a class="number 3" href="#" title="3">3</a></li>			
-			<li><a class="number 4" href="#" title="4">4</a></li>
-			<li><a class="number 5" href="#" title="5">5</a></li>
+			<li><a href="#" class="number 1 active" title="1">1</a></li>			
+			<li><a href="#" class="number 2" title="2">2</a></li>			
+			<li><a href="#" class="number 3" title="3">3</a></li>			
+			<li><a href="#" class="number 4" title="4">4</a></li>
+			<li><a href="#" class="number 5" title="5">5</a></li>
 		</ul>
 	</div>
-</div>
+		
+	<p>You can create a carousel by adding the class <code>slide-box-carousel</code> to your container. Carousels have support built-in for pager functionality. The pager needs to be included in the <abbr>HTML</abbr>.</p>
+	
+<pre><code class="codeblock"><!--<div class="slide-box slide-box-carousel box-active">
+	<img class="slide" src="img1.jpg">
+	<img class="slide" src="img2.jpg">
+	<img class="slide" src="img3.jpg">
+	
+	<div class="controls">
+		<a href="#" class="close">Close</a>
+		<a href="#" class="prev disabled">Previous</a>
+		<a href="#" class="next">Next</a>
+	</div>
+		
+	<ul class="pager pager-inline">			
+		<li><a href="#" class="number 1 active" title="1">1</a></li>			
+		<li><a href="#" class="number 2" title="2">2</a></li>			
+		<li><a href="#" class="number 3" title="3">3</a></li>
+	</ul>
+</div>--></code></pre>
+
+	<p>As a starting point, the default <code>slidebox.css</code> provides a responsive width of 50% as a starting point, with an image ratio of 4/3. You can override this in your own <abbr>CSS</abbr>. For instance, if you need the carousel to have a fixed width.<!-- You can set different dimensions through data attributes on the carousel, <code>data-width</code> and <code>data-ratio</code>: --><br>
+	The carousel above has been set to 100% of its parent by defining these styles:</p>
+
+<pre><code class="codeblock"><!--.ex-2-carousel		{	position: relative;
+						width: 100% !important;
+						padding-bottom: 75% !important; }--></code></pre>
+						
+	<p>For now, use the keyword <code>!important</code> to make sure the override sticks.</p>
+	
+</section>
 
 
 	<p>...</p>
@@ -132,7 +179,6 @@
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="assets/slidebox-min.js"></script>
-<script type="text/javascript" src="demo/scripts/codeformatting-min.js"></script>
-<script type="text/javascript" src="demo/scripts/smoothscroll-min.js"></script>
+<script type="text/javascript" src="demo/scripts/main-min.js"></script>
 </body>
 </html>

@@ -23,12 +23,18 @@ p,
 li {
   font-family: "Sabon Next", "Sabon", "Times", "Georgia", serif; }
 
-/* Font sizing */
+.font-normal, body,
+h1,
+h2,
+h3,
+p,
+li {
+  font-size: 21px; }
+
 body {
   background-color: #fefefe;
   margin: 0;
-  padding: 2em;
-  padding-bottom: 2em; }
+  padding: 2em; }
 
 body,
 h1,
@@ -36,7 +42,6 @@ h2,
 h3,
 p,
 li {
-  font-size: 21px;
   line-height: 1.2em; }
 
 h1 {
@@ -75,6 +80,7 @@ pre, code {
 
 pre {
   width: 100%;
+  overflow-x: scroll;
   box-sizing: border-box;
   padding: 0.5em 1em;
   -moz-tab-size: 4;
@@ -92,9 +98,8 @@ pre {
 .badge {
   width: 75%;
   height: 0;
-  padding-bottom: 75%;
-  margin: 0 auto;
-  margin-top: -75px; }
+  padding-bottom: 56.25%;
+  margin: 0 auto; }
 
 .badge img {
   width: 100%;
@@ -121,3 +126,16 @@ pre {
   position: relative;
   width: 100% !important;
   padding-bottom: 75% !important; }
+
+@media only screen and (max-width: 500px) {
+  .font-normal, body,
+  h1,
+  h2,
+  h3,
+  p,
+  li {
+    font-size: 18px; }
+  body {
+    padding: 1.5em; }
+  .article-center {
+    width: 100%; } }
