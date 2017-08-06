@@ -9,4 +9,4 @@ A jQuery plugin for easy creation of both lightbox-style media galleries and car
 - 	Basic CSS transitions between slides.
 - 	Lazyloads images and video through lazysizes.js.
 	
-See [slidebox.vdmolen.xyz](http://slidebox.vdmolen.xyz) for setup and examples.
+See [slidebox.vdmolen.xyz](http://slidebox.vdmolen.xyz) for basic setup and examples.

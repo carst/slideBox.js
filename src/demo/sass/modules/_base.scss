@@ -1,18 +1,13 @@
-$accent: rgb(0, 51, 235);
-
-@import 'fonts';
-
 
 body					{	background-color: #fefefe;
-						margin: 0; padding: 2em;
-						padding-bottom: 2em; }
+						margin: 0; padding: 2em; }
 body,
 h1,
 h2,
 h3,
 p,
 li					{	@extend .font-serif;
-						font-size: 21px;
+						@extend .font-normal	;
 						line-height: 1.2em; }
 
 h1					{	font-size: 2.3em;
@@ -37,7 +32,7 @@ a:hover				{	color: #222; }
 pre, code			{	background-color: rgb(240,240,240);
 						font-family: 'Menlo', 'Monaco', 'Andale Mono', monospace;
 						font-size: 0.75em; color: rgb(99,33,150); }
-pre					{	width: 100%;
+pre					{	width: 100%; overflow-x: scroll;
 						box-sizing: border-box;
 						padding: 0.5em 1em;
 						tab-size: 4; }
@@ -48,14 +43,12 @@ pre					{	width: 100%;
 /// STRUCTURE
 
 .article-center		{	width: 30em;
-						margin-left: auto; margin-right: auto;
-						//background-color: red;
-						 }
-.badge				{	width: 75%; height: 0; padding-bottom: 75%;
-						margin: 0 auto;
-						margin-top: -75px; }
+						margin-left: auto; margin-right: auto; }
+.badge				{	width: 75%; height: 0; padding-bottom: 0.75*75%;
+						margin: 0 auto; }
 						
 .badge img			{	width: 100%; height: auto; }
+
 
 /// EXAMPLE 1
 
