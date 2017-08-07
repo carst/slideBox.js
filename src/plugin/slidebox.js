@@ -170,6 +170,7 @@ function initSlides(config) {
 				$videos = $box.find('video, .video-yt, .video-vimeo'),
 				slideCount = $slides.length,
 				$slideActive = $box.find('.slide-active'),
+				hasActiveSlide = $slideActive.length > 0,
 				loopBox = $box.hasClass('auto-loop') || $parent.hasClass('auto-loop'),
 				$controls = $parent.find('.controls'),
 				$prev = $controls.find('.prev'),
@@ -178,6 +179,12 @@ function initSlides(config) {
 
 				$pager = $box.find('.pager'),
 				$pagerAnchors = $pager.find('a');
+			
+			
+			if (!hasActiveSlide) {
+				$slideActive = $slides.eq(0);
+				$slideActive.addClass('slide-active');
+			}
 			
 			boxDataCache[boxIndex] = {
 				slides		: $slides,
@@ -313,6 +320,7 @@ function initSlides(config) {
 		//getActiveSlide(boxIndex);
 		
 		boxProps.pos = hasActiveSlide ? $boxSlides.index($slideActive) : 0;
+		//if (!hasActiveSlide) $boxSlides.eq(0).addClass('active-slide');
 		getAdjacentSlides();
 		
 		if (config.debug) {
