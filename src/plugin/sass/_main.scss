@@ -65,11 +65,12 @@
 .slide-prev			{	left: -100%; }
 .slide-next			{	left: 100%; }
 
-.slide-active		{	left: 2*$gutter;
-						opacity: 1 !important; }
+.slide-active		{	}
 
 .box-zoomed .slide-active
-					{	pointer-events: auto;
+					{	left: 2*$gutter;
+						opacity: 1 !important; 
+						pointer-events: auto;
 						cursor: zoom-out; }
 
 .loading				{	background-image: url($imgdir+'spiffygif_30x30.gif') !important;
