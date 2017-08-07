@@ -1,0 +1,22 @@
+
+/// MEASURES
+
+$screen-width-tp: 768px !default;
+$screen-width-sl: 640px !default;
+
+$h-margin: 24px !default;
+$v-margin: 24px !default;
+$gutter: 100%/30 !default;
+$gutter-sl: $gutter !default;
+
+/// COLOURS
+
+$text: #222 !default;
+$black: #000 !default;
+
+$blue: rgb(0, 51, 235) !default;
+$accent: $blue !default;
+
+/// OTHER
+
+$imgdir: 'images/' !default;

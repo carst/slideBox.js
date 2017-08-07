@@ -1,0 +1,78 @@
+/// CONTROLS
+
+.controls			{	z-index: 300; position: fixed;
+						top: 0; left: 0;
+						width: 100%; height: 100%;
+						//width: 100vw; height: 100vh;
+						text-align: center; 
+						pointer-events: none;
+						transition: all 250ms ease-in; }
+
+.slide-box-carousel:not(.box-zoomed) .controls
+					{	position: absolute; }
+
+
+.widget				{	pointer-events: auto; }
+
+.widget-show			{	opacity: 1; pointer-events: auto; }
+.widget-hide,
+.widget-hide:hover	{	opacity: 0; pointer-events: none; }
+
+.close,
+.arrow				{	@extend .widget; }
+
+.slide-box:not(.box-zoomed) .close
+					{	@extend .widget-hide; }
+.slide-box:not(.box-zoomed, .slide-box-carousel) .arrow
+					{	@extend .widget-hide; }
+					
+.controls a			{	line-height: 16px; text-align: center; }
+.controls a:link,
+.controls a:visited	{	color: $text; text-decoration: none; }
+.controls a:hover	{	color: $accent; }
+
+
+/// WIDGETS: CLOSE
+
+.close				{	position: absolute; left: 0;
+						width: 36px; height: 36px;
+						padding: 18px;
+						background-repeat: no-repeat;
+						background-position: center center; 
+						background-size: 36px 36px;
+						font-size: 0; }
+.close:link,
+.close:visited		{	background-image: url($imgdir+'widget-close.svg'); }
+.close:hover			{	background-image: url($imgdir+'widget-close-over.svg'); }
+
+
+/// WIDGETS: ARROWS */
+
+.disabled,
+.disabled:hover		{	@extend .widget-hide; }
+
+a.disabled:link,
+a.disabled:visited,
+a.disabled:hover		{	color: rgba(0,0,0,0.0);
+						cursor: default; }
+
+
+.arrow				{	position: absolute; top: 3*$gutter;
+						height: $h-margin; width: $h-margin;
+						width: 30%; height: 100% - 6*$gutter;
+						text-decoration: none; font-size: 0;
+						line-height: 1.15*$h-margin; }
+.carousel .arrow		{	width: 50%; }
+
+.arrow.disabled		{	cursor: default; }
+
+.prev, .next			{	@extend .arrow; }
+
+.prev				{	left: 0;
+						text-align: right; }
+.next				{	right: 0; }
+
+.arrow.prev			{	cursor: url($imgdir+'arrow-long-left.svg'), url($imgdir+'arrow-long-left.png'), pointer; }
+
+.arrow.next			{	cursor: url($imgdir+'arrow-long-right.svg'), url($imgdir+'arrow-long-right.png'), pointer; }
+
