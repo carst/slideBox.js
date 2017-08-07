@@ -3,7 +3,7 @@
 A jQuery plugin for easy creation of responsive lightbox-style media galleries and carousels. Features:
 	
 - 	Groups together your media in a lightbox-style gallery or carousel.
-- 	Autorotating carousels.
+- 	Autorotating carousels.
 - 	Carousel pager support.
 - 	Basic CSS transitions between slides.
 - 	Lazyloads images and video through [lazysizes.js](https://github.com/aFarkas/lazysizes).
