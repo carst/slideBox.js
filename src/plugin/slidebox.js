@@ -1,8 +1,8 @@
 // jshint ignore: start
 
-// @codekit-prepend 'slidebox-util.js'
-// @codekit-prepend 'jquery.scrollLock.simple.js'
-// @codekit-append 'lazysizes.js'
+// @codekit-prepend 'includes/slidebox-util.js'
+// @codekit-prepend 'includes/jquery.scrollLock.simple.js'
+// @codekit-append 'includes/lazysizes.js'
 
 var slideBoxCm = {};
 
@@ -517,7 +517,7 @@ function initSlides(config) {
 	
 	function toggleControls(boxIndex) {
 
-		if (boxDataCache[boxIndex].hasClass('box-zoomed')) {
+		if ($boxes.eq(boxIndex).hasClass('box-zoomed')) {
 		
 			boxDataCache[boxIndex].controls.prev.removeClass('widget-hide');
 			boxDataCache[boxIndex].controls.next.removeClass('widget-hide');
@@ -674,21 +674,23 @@ function initSlides(config) {
 			});
 		}
 		
-		$(document).on('click', '.slide-active:not(.slide-carousel,.slide.playing)', function (event) {
+		$(document).on('click', '.slide-active:not(.slide.playing)', function (event) {
 		// ZOOM OUT
 		
 			var $slide = $(this),
+				$box = $slide.parents('.slide-box'),
 				archiveUrl = $slide.data('archiveUrl');
 			
 			event.stopPropagation();
 			if (config.debug) console.log('\nactive slide clicked:' + $slide);
-			toggleZoom();
 			
-		}).on('click', '.widget.prev', prevSlide)
-		.on('click', '.widget.next', nextSlide)
+			if (!$box.hasClass('slide-box-carousel')) toggleZoom();
+			
+		}).on('click', '.controls .prev', prevSlide)
+		.on('click', '.controls .next', nextSlide)
 		.on('swiperight', prevSlide)
 		.on('swipeleft', nextSlide)
-		.on('click', '.close', function (event) {
+		.on('click', '.controls .close', function (event) {
 		// ZOOM OUT
 		
 			event.preventDefault();
