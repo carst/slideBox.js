@@ -673,16 +673,16 @@ function initSlides(config) {
 				loadBox($(this)); 
 			});
 		} else {
-			$(document).on('click', '.slide:not(.slide-active,.slide.playing)', function (event) {
+			$(document).on('click', '.slide:not(.slide-detail,.slide.playing)', function (event) {
 		// ZOOM IN
 
 				event.stopPropagation();
-				if (config.debug) console.log('\nslide clicked');
+				if (config.debug) console.log('\nSlide clicked');
 				toggleZoom($(this));
 			});
 		}
 		
-		$(document).on('click', '.slide-active:not(.slide.playing)', function (event) {
+		$(document).on('click', '.slide-detail:not(.slide.playing)', function (event) {
 		// ZOOM OUT
 		
 			var $slide = $(this),
@@ -690,7 +690,7 @@ function initSlides(config) {
 				archiveUrl = $slide.data('archiveUrl');
 			
 			event.stopPropagation();
-			if (config.debug) console.log('\nactive slide clicked:' + $slide);
+			if (config.debug) console.log('\nDetail slide clicked:' + $slide);
 			
 			if (!$box.hasClass('slide-box-carousel')) toggleZoom();
 			
