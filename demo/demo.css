@@ -127,6 +127,15 @@ pre {
   width: 100% !important;
   padding-bottom: 75% !important; }
 
+.ex-3-lazyload .slide:not(.slide-detail) {
+  float: left;
+  width: 45%;
+  height: 0;
+  padding-bottom: 32%;
+  margin-right: 5%;
+  margin-bottom: 2em;
+  background-size: cover; }
+
 @media only screen and (max-width: 500px) {
   .font-normal, body,
   h1,
