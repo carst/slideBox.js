@@ -262,11 +262,12 @@ function initSlides(config) {
 			var element = e.target,
 				$element = $(element),
 				$slide = $element.closest(config.slide);
-			
+
+			e.preventDefault();
 			//console.log($element)
 			//console.log('bla');
 			
-			setSlideBg($slide, defer=true)
+			setSlideBg($slide, defer=true);
 			
 		});
 		
@@ -605,7 +606,10 @@ function initSlides(config) {
 			$box.removeClass('box-zoomed');
 			$boxZoomed = $();
 			
-			boxProps.slides.removeClass('slide-active slide-prev slide-next slide-detail');
+			//boxProps.slides.removeClass('slide-active slide-prev slide-next slide-detail');
+			boxProps.slides.removeClass('slide-detail');
+			if (!$box.hasClass('slide-box-carousel'))
+				boxProps.slides.removeClass('slide-active slide-prev slide-next');
 			boxProps.videos.trigger('pauseVideo');
 			
 			$.scrollLock(false);

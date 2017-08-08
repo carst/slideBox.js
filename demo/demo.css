@@ -118,9 +118,9 @@ pre {
     width: 33.3333333333%;
     position: relative;
     padding-bottom: 33.3333333333%;
-    background-size: cover !important; }
+    background-size: cover; }
   .ex-1-grid .slide-detail {
-    background-size: contain !important; }
+    background-size: contain; }
 
 .ex-2-carousel {
   position: relative;

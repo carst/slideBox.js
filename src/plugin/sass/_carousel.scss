@@ -13,7 +13,7 @@ $carousel-height: $carousel-width / $carousel-ratio;
 						top: 0; left: 0;
 						width: 100%; height: 0;
 						padding-bottom: percentage(1/$carousel-ratio);
-						background-size: cover !important;
+						background-size: cover;
 						cursor: inherit; }
 
 .slide-box-carousel .slide:not(.slide-detail)

@@ -109,7 +109,7 @@ function setSlideBg($slide, defer) {
 		if (mobile && typeof fullSrcResp !== 'undefined') bgSrc = fullSrcResp;
 		else if (typeof fullSrc !== 'undefined') bgSrc = fullSrc;
 		else if (defer && typeof lazyLoadSrc !== 'undefined') bgSrc = lazyLoadSrc;
-		else bgSrc = $img.attr('src');
+		else if (!$img.hasClass('lazyload')) bgSrc = $img.attr('src');
 		
 		
 
