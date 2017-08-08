@@ -16,7 +16,7 @@ function initSlides(config) {
 			setPath		: false,
 			wrapSlides	: false,
 			loopSlides	: false,
-			slideInterval : 5000,
+			interval 	: 5000,
 			debug : debug
 		},
 		config = typeof(config) === 'object' ? config : defaults,
@@ -32,7 +32,7 @@ function initSlides(config) {
 
 		//wrapSlides = config.wrapSlides,
 		//loopSlides = config.loopSlides,
-		//slideInterval = config.slideInterval,
+		//interval = config.slideInterval,
 		
 		initialState = getState(),
 		delta = {
@@ -171,7 +171,8 @@ function initSlides(config) {
 				slideCount = $slides.length,
 				$slideActive = $box.find('.slide-active'),
 				hasActiveSlide = $slideActive.length > 0,
-				loopBox = $box.hasClass('auto-loop') || $parent.hasClass('auto-loop'),
+				loopBox = $box.data('loop') || $box.hasClass('auto-loop') || $parent.hasClass('auto-loop'),
+				interval = $box.data('interval') ? $box.data('interval') : config.interval,
 				$controls = $parent.find('.controls'),
 				$prev = $controls.find('.prev'),
 				$next = $controls.find('.next'),
@@ -209,7 +210,7 @@ function initSlides(config) {
 	
 				setInterval(function() {
 					changeSlide($box, 'next');
-				}, config.slideInterval);
+				}, interval);
 			}
 			
 		});

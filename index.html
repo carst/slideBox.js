@@ -35,16 +35,16 @@
 
 <p>A jQuery plugin for easy creation of responsive lightbox-style<br>media galleries and carousels. Features:</p>
 	
-	<ul>
+<ul>
 	<li>Groups together your media in a lightbox-style gallery or carousel.</li>
 	<li>Autorotating carousels.</li>
 	<li>Carousel pager support.</li>
 	<li>Basic CSS transitions between slides.</li>
 	<li>Lazyloads images and video through <a href="https://github.com/aFarkas/lazysizes" target="_blank">lazysizes.js</a>.</li>
 	<li>Minimal styling included.</li>
-	</ul>
+</ul>
 	
-	<p>See below for basic setup and examples.<br>Download the distribution from the <a href="https://github.com/carst/slideBox.js">GitHub repository.</a></p>
+<p>See below for basic setup and examples.<br>Download the distribution from the <a href="https://github.com/carst/slideBox.js">GitHub repository.</a></p>
 
 <h2>Setup</h2>
 	
@@ -123,7 +123,7 @@ $(function () {
 <section id="ex-2-carousel">
 	<h3>Example 2: Carousel</h3>
 
-	<div class="slide-box slide-box-carousel ex-2-carousel"> <!-- auto-loop -->
+	<div class="slide-box slide-box-carousel ex-2-carousel">
 		<img class="slide lazyload" data-src="demo/media/Zermatt.jpg" alt="Zermatt" width="1500" height="1075" />
 		<img class="slide lazyload" data-src="demo/media/Projet-pour-un-Jardin.jpg" alt="Projet-pour-un-Jardin" width="640" height="959" />
 		<img class="slide lazyload" data-src="demo/media/Container-im-Hamburger-Hafen.jpg" alt="Container-im-Hamburger-Hafen" width="4003" height="2251" />
@@ -145,9 +145,9 @@ $(function () {
 		</ul>
 	</div>
 		
-	<p>You can create a carousel by adding the class <code>slide-box-carousel</code> to your container. Carousels have support built-in for pager functionality. The pager needs to be included in the <abbr>HTML</abbr>.</p>
+	<p>Create a carousel by adding the class <code>slide-box-carousel</code> to your container. Carousels have support built-in for pager functionality. The pager needs to be included in the <abbr>HTML</abbr>.</p>
 	
-<pre><code class="codeblock"><!--<div class="slide-box slide-box-carousel">
+	<pre><code class="codeblock"><!--<div class="slide-box slide-box-carousel">
 	<img class="slide" src="img1.jpg">
 	<img class="slide" src="img2.jpg">
 	<img class="slide" src="img3.jpg">
@@ -168,11 +168,45 @@ $(function () {
 	<p>As a starting point, the default <code>slidebox.css</code> provides a responsive width of 50% as a starting point, with an image ratio of 4/3. You can override this in your own <abbr>CSS</abbr>. For instance, if you need the carousel to have a fixed width.<!-- You can set different dimensions through data attributes on the carousel, <code>data-width</code> and <code>data-ratio</code>: --><br>
 	The carousel above has been set to 100% of its parent by defining these styles:</p>
 
-<pre><code class="codeblock"><!--.ex-2-carousel		{	position: relative;
+	<pre><code class="codeblock"><!--.ex-2-carousel		{	position: relative;
 						width: 100% !important;
 						padding-bottom: 75% !important; }--></code></pre>
 						
 	<p>For now, use the keyword <code>!important</code> to make sure the override sticks.</p>
+
+	<h3>Example 2A: Automatic Looping</h3>
+
+	<div class="slide-box slide-box-carousel ex-2-carousel" data-loop="true" data-interval="2500"> 		<img class="slide lazyload" data-src="demo/media/Im-Lauf-der-Zeit.jpg" alt="Im-Lauf-der-Zeit" width="1000" height="625">
+		<img class="slide lazyload" data-src="demo/media/SIPA-121.jpg" alt="SIPA-121" width="1000" height="669">
+		<img class="slide lazyload" data-src="demo/media/North-by-Northwest.jpg" alt="North-by-Northwest" width="960" height="538">
+		
+		<ul class="pager pager-inline">			
+			<li><a href="#" class="number 1 active" title="1">1</a></li>			
+			<li><a href="#" class="number 2" title="2">2</a></li>			
+			<li><a href="#" class="number 3" title="3">3</a></li>
+		</ul>
+	</div>
+	
+	<p>Create a carousel that loops by itself by setting two data attributes:</p>
+		
+	<dl>
+		<dt><code>data-loop</code></dt>
+		<dd><code>true</code> or <code>false</code>.<br>[default: false]</dd>
+		<dt><code>data-interval</code></li>
+		<dd>Time between slide transitions in ms.<br>[default: 5000ms]</dd>
+	</ul>
+	
+	<pre><code class="codeblock"><!--<div class="slide-box slide-box-carousel" data-loop="true" data-interval="2500">
+	<img class="slide" src="img1.jpg">
+	<img class="slide" src="img2.jpg">
+	<img class="slide" src="img3.jpg">
+	
+	<ul class="pager pager-inline">			
+		<li><a href="#" class="number 1 active" title="1">1</a></li>			
+		<li><a href="#" class="number 2" title="2">2</a></li>			
+		<li><a href="#" class="number 3" title="3">3</a></li>
+	</ul>
+</div>--></code></pre>
 	
 </section>
 
