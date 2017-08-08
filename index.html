@@ -72,6 +72,7 @@ $(function () {
 <nav><ol>
 	<li><a href="#ex-1-grid">Image Grid with Zoom</a></li>
 	<li><a href="#ex-2-carousel">Carousel</a></li>
+	<li><a href="#ex-3-lazyload">Lazy Loading</a></li>
 </ol></nav>
 
 <section id="ex-1-grid">
@@ -79,7 +80,7 @@ $(function () {
 	<div class="slide-box ex-1-grid">
 		<img class="slide" src="demo/media/Container-im-Hamburger-Hafen.jpg" alt="Container-im-Hamburger-Hafen" width="4003" height="2251" />
 		<img class="slide" src="demo/media/Projet-pour-un-Jardin.jpg" alt="Projet-pour-un-Jardin" width="640" height="959" />
-		<img class="slide lazyload" src="/assets/images/blank.gif" data-src="demo/media/Zermatt.jpg" alt="Zermatt" width="1500" height="1075" />
+		<img class="slide" src="demo/media/Zermatt.jpg" alt="Zermatt" width="1500" height="1075" />
 		<img class="slide" src="demo/media/filip_dujardin_06.jpg" alt="filip_dujardin_06" width="818" height="816" />
 		<img class="slide" src="demo/media/Horst-Buchholz-in-One-Two-Three-1961.jpg" alt="Horst-Buchholz-in-One,-Two,-Three-(1961)" width="1000" height="1000" />
 		<img class="slide" src="demo/media/island.jpg" alt="island" width="2400" height="2900" />
@@ -175,6 +176,32 @@ $(function () {
 	
 </section>
 
+<section id="ex-3-lazyload">
+	<h3>Example 3: Lazy Loading</h3>
+
+	<div class="slide-box ex-3-lazyload">
+		<img class="slide lazyload" data-src="demo/media/Bibliotheek-011.jpg" alt="Bibliotheek-011" />
+		<img class="slide lazyload" data-src="demo/media/Zermatt.jpg" alt="Zermatt" width="1500" height="1075" />
+		
+		<div class="controls">
+			<a href="#" class="close">Close</a>
+			<a href="#" class="prev disabled">Previous</a>
+			<a href="#" class="next">Next</a>
+		</div>
+	</div>
+		
+	<p>slideBox.js can lazyload images through the <a href="https://github.com/aFarkas/lazysizes" target="_blank">lazysizes.js</a> plugin.<br>
+	To make this work:</p>
+	<ol>
+		<li>Add the <abbr>CSS</abbr> class <code>lazyload</code> to your <slide</code> element.</li> 		<li>Move your image source to a data attribute <code>data-src</code>.</li>
+	</ol>
+	
+<pre><code class="codeblock"><!--<div class="slide-box">
+	<img class="slide lazyload" data-src="img1.jpg">
+	<img class="slide lazyload" data-src="img2.jpg">
+</div>--></code></pre>
+
+	</section>
 
 	<p>...</p>
 	<p><a href="http://vdmolen.xyz"><small>Created by Carst vd. Molen</a></small></p>
