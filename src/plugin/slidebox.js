@@ -210,15 +210,13 @@ function initSlides(config) {
 				setInterval(function() {
 					changeSlide($box, 'next');
 				}, config.slideInterval);
-				
 			}
 			
 		});
 		
 		if (config.debug) console.log(boxDataCache);
 		
-		if (hasYtEmbeds || hasVimeoEmbeds) /// hasHtml5Videos || 
-			document.addEventListener('lazybeforeunveil', function(e) {
+		function doVideoStuff(e) {
 				
 			var element = e.target,
 				$element = $(element),
@@ -257,7 +255,24 @@ function initSlides(config) {
 					addPlayerObject($clone);
 				}
 			}
+		}
+		
+		document.addEventListener('lazybeforeunveil', function(e) {
+			
+			var element = e.target,
+				$element = $(element),
+				$slide = $element.closest(config.slide);
+			
+			//console.log($element)
+			//console.log('bla');
+			
+			setSlideBg($slide, defer=true)
+			
 		});
+		
+		if (hasYtEmbeds || hasVimeoEmbeds) /// hasHtml5Videos || 
+			document.addEventListener('lazybeforeunveil', doVideoStuff);
+			//document.addEventListener('lazybeforeunveil', function(e) );
 		
 	}
 
@@ -669,12 +684,12 @@ function initSlides(config) {
 		if (config.slideBoxClick) {
 			$(document).on('click', '.slide-box:not(.box-zoomed)', function (event) {
 		
-				if (config.debug) console.log('\nslide-box clicked');
+				if (config.debug) console.log('\nslideBox clicked');
 				loadBox($(this)); 
 			});
 		} else {
 			$(document).on('click', '.slide:not(.slide-detail,.slide.playing)', function (event) {
-		// ZOOM IN
+			// ZOOM IN
 
 				event.stopPropagation();
 				if (config.debug) console.log('\nSlide clicked');
@@ -740,7 +755,7 @@ function initSlides(config) {
 		addEvents();
 
 		getActiveBox();
-		loadSlideBgs();
+		loadSlideBgs($boxes);
 	}
 	/*
 	if (query.indexOf('zoom') > -1) {

@@ -16,7 +16,7 @@ $carousel-height: $carousel-width / $carousel-ratio;
 						background-size: cover !important;
 						cursor: inherit; }
 
-.slide-box-carousel .slide
+.slide-box-carousel .slide:not(.slide-detail)
 					{	@extend .slide-carousel; }
 
 .slide-carousel:not(.slide-active)
