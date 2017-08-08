@@ -76,7 +76,7 @@ $(function () {
 
 <section id="ex-1-grid">
 	<h3>Example 1: Image Grid with Zoom</h3>
-	<div class="slide-box box-active ex-1-grid">
+	<div class="slide-box ex-1-grid">
 		<img class="slide" src="demo/media/Container-im-Hamburger-Hafen.jpg" alt="Container-im-Hamburger-Hafen" width="4003" height="2251" />
 		<img class="slide" src="demo/media/Projet-pour-un-Jardin.jpg" alt="Projet-pour-un-Jardin" width="640" height="959" />
 		<img class="slide" src="demo/media/Zermatt.jpg" alt="Zermatt" width="1500" height="1075" />
@@ -95,7 +95,7 @@ $(function () {
 	</div>
 
 	<p><abbr>HTML</abbr> structure:</p>
-<pre><code class="codeblock"><!--<div class="slide-box box-active">
+<pre><code class="codeblock"><!--<div class="slide-box">
 	<img class="slide" src="img1.jpg">
 	<img class="slide" src="img2.jpg">
 	<img class="slide" src="img3.jpg">
@@ -122,12 +122,12 @@ $(function () {
 <section id="ex-2-carousel">
 	<h3>Example 2: Carousel</h3>
 
-	<div class="slide-box slide-box-carousel box-active ex-2-carousel"> <!-- auto-loop -->
-		<img class="slide" src="demo/media/Container-im-Hamburger-Hafen.jpg" alt="Container-im-Hamburger-Hafen" width="4003" height="2251" />
-		<img class="slide" src="demo/media/Projet-pour-un-Jardin.jpg" alt="Projet-pour-un-Jardin" width="640" height="959" />
-		<img class="slide" src="demo/media/Zermatt.jpg" alt="Zermatt" width="1500" height="1075" />
-		<img class="slide" src="demo/media/filip_dujardin_06.jpg" alt="filip_dujardin_06" width="818" height="816" />
-		<img class="slide" src="demo/media/Horst-Buchholz-in-One-Two-Three-1961.jpg" alt="Horst-Buchholz-in-One,-Two,-Three-(1961)" width="1000" height="1000" />
+	<div class="slide-box slide-box-carousel ex-2-carousel"> <!-- auto-loop -->
+		<img class="slide lazyload" data-src="demo/media/Zermatt.jpg" alt="Zermatt" width="1500" height="1075" />
+		<img class="slide lazyload" data-src="demo/media/Projet-pour-un-Jardin.jpg" alt="Projet-pour-un-Jardin" width="640" height="959" />
+		<img class="slide lazyload" data-src="demo/media/Container-im-Hamburger-Hafen.jpg" alt="Container-im-Hamburger-Hafen" width="4003" height="2251" />
+		<img class="slide lazyload" data-src="demo/media/filip_dujardin_06.jpg" alt="filip_dujardin_06" width="818" height="816" />
+		<img class="slide lazyload" data-src="demo/media/Horst-Buchholz-in-One-Two-Three-1961.jpg" alt="Horst-Buchholz-in-One,-Two,-Three-(1961)" width="1000" height="1000" />
 	
 		<div class="controls">
 			<a href="#" class="close">Close</a>
@@ -146,7 +146,7 @@ $(function () {
 		
 	<p>You can create a carousel by adding the class <code>slide-box-carousel</code> to your container. Carousels have support built-in for pager functionality. The pager needs to be included in the <abbr>HTML</abbr>.</p>
 	
-<pre><code class="codeblock"><!--<div class="slide-box slide-box-carousel box-active">
+<pre><code class="codeblock"><!--<div class="slide-box slide-box-carousel">
 	<img class="slide" src="img1.jpg">
 	<img class="slide" src="img2.jpg">
 	<img class="slide" src="img3.jpg">

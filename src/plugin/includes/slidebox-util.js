@@ -91,68 +91,73 @@ function setScroll($box) {
 }
 
 
-function loadSlideBgs($targetBox) {
-	
-	var config = {
-			slide 		: '.slide, .load-bg'
-		},
+function setSlideBg($slide, defer) {
+		
+	var $img = $slide.is('img') ? $slide : $slide.children('img'),
+		bgSrc,
+		fullImg = new Image(),
+		loaded = false,
 		imgDir = typeof imgDirDefault !== 'undefined' ? imgDirDefault : 'images/';
 	
 	function findBgSrc($img) {
 		
 		var bgSrc,
+			lazyLoadSrc = $img.data('src'),
 			fullSrc = $img.data('srcFull'),
 			fullSrcResp = $img.data('srcFullSl');
 		
-		bgSrc = typeof fullSrc !== 'undefined' ? fullSrc : $img.attr('src');
+		if (mobile && typeof fullSrcResp !== 'undefined') bgSrc = fullSrcResp;
+		else if (typeof fullSrc !== 'undefined') bgSrc = fullSrc;
+		else if (defer && typeof lazyLoadSrc !== 'undefined') bgSrc = lazyLoadSrc;
+		else bgSrc = $img.attr('src');
 		
-		if (typeof fullSrcResp !== 'undefined' && mobile) bgSrc = fullSrcResp;
+		
 
 		return bgSrc;
 	}
 	
-	function setSlideBg($slide) {
+	function loadHandler() {
 		
-		var $img = $slide.is('img') ? $slide : $slide.children('img'),
-			bgSrc,
-			fullImg = new Image(),
-			loaded = false;
+		/*
+		if (loaded) { 
+			return;
+		}
+		loaded = true;
+		*/
 		
-		if ($slide.is('a')) $img = $slide.find('img');
+		//trace('src ' + this.src);
+		//trace('full Images src' + fullImg);
 		
-		function loadHandler() {
-			
-			/*
-			if (loaded) { 
-				return;
-			}
-			loaded = true;
-			*/
-			
-			//trace('src ' + this.src);
-			//trace('full Images src' + fullImg);
-			
-			$slide
-				.removeClass('loading')
-				.css('background-image', 'url(' + bgSrc + ')')
-				.addClass('has-bg');
+		$slide
+			.removeClass('loading')
+			.css('background-image', 'url(' + bgSrc + ')')
+			.addClass('has-bg');
 
-			if ($slide.is('img')) $img.attr('src', imgDir + 'blank.gif');
-			
-		}
+		if ($slide.is('img')) $img.attr('src', imgDir + 'blank.gif');
 		
-		if (!$slide.hasClass('has-bg')) {
-			
-			bgSrc = findBgSrc($img);
-			//if (debug) console.log('bgSrc : ' + bgSrc);
-			if (typeof bgSrc !== 'undefined') {
-				$slide.addClass('loading');
-				fullImg.onload = loadHandler();
-				fullImg.src = bgSrc;
-			}
-		}
-				
 	}
+	
+	if ($slide.is('a')) $img = $slide.find('img');
+	
+	if (!$slide.hasClass('has-bg')) {
+		
+		bgSrc = findBgSrc($img);
+		//if (debug) console.log('bgSrc : ' + bgSrc);
+		if (typeof bgSrc !== 'undefined') {
+			$slide.addClass('loading');
+			fullImg.onload = loadHandler();
+			fullImg.src = bgSrc;
+		}
+	}
+			
+}
+
+
+function loadSlideBgs($targetBox) {
+	
+	var config = {
+			slide 		: '.slide, .load-bg'
+		};
 	
 	var $targetBox = $targetBox === undefined ? $('.box-active') : $targetBox;
 	
