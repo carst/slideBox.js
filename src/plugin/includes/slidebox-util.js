@@ -93,7 +93,8 @@ function setScroll($box) {
 
 function setSlideBg($slide, defer) {
 		
-	var $img = $slide.is('img') ? $slide : $slide.children('img'),
+	var bgWasSet = false,
+		$img = $slide.is('img') ? $slide : $slide.children('img'),
 		bgSrc,
 		fullImg = new Image(),
 		loaded = false,
@@ -111,8 +112,9 @@ function setSlideBg($slide, defer) {
 		else if (defer && typeof lazyLoadSrc !== 'undefined') bgSrc = lazyLoadSrc;
 		else if (!$img.hasClass('lazyload')) bgSrc = $img.attr('src');
 		
+		//console.log('defer : ' + defer);
+		//console.log('lazyLoadSrc : ' + lazyLoadSrc);
 		
-
 		return bgSrc;
 	}
 	
@@ -139,17 +141,23 @@ function setSlideBg($slide, defer) {
 	
 	if ($slide.is('a')) $img = $slide.find('img');
 	
-	if (!$slide.hasClass('has-bg')) {
+	//console.log($img);
+	
+	if ($img.length > 0 && !$slide.hasClass('has-bg')) {
 		
 		bgSrc = findBgSrc($img);
-		//if (debug) console.log('bgSrc : ' + bgSrc);
+		//if (debug) 
+		//console.log('bgSrc : ' + bgSrc);
 		if (typeof bgSrc !== 'undefined') {
 			$slide.addClass('loading');
 			fullImg.onload = loadHandler();
 			fullImg.src = bgSrc;
+			bgWasSet = true;
 		}
 	}
-			
+	
+	return bgWasSet;
+	
 }
 
 

@@ -1,5 +1,6 @@
 // jshint ignore: start
 
+// @codekit-prepend 'includes/slidebox-globals.js'
 // @codekit-prepend 'includes/slidebox-util.js'
 // @codekit-prepend 'includes/jquery.scrollLock.simple.js'
 // @codekit-append 'includes/lazysizes.js'
@@ -17,7 +18,7 @@ function initSlides(config) {
 			wrapSlides	: false,
 			loopSlides	: false,
 			interval 	: 5000,
-			debug : debug
+			debug 		: debug
 		},
 		config = typeof(config) === 'object' ? config : defaults,
 
@@ -181,11 +182,12 @@ function initSlides(config) {
 				$pager = $box.find('.pager'),
 				$pagerAnchors = $pager.find('a');
 			
-			
 			if (!hasActiveSlide) {
 				$slideActive = $slides.eq(0);
 				$slideActive.addClass('slide-active');
 			}
+			
+			if (slideCount === 1) $next.addClass('disabled');
 			
 			boxDataCache[boxIndex] = {
 				slides		: $slides,
@@ -262,13 +264,25 @@ function initSlides(config) {
 			
 			var element = e.target,
 				$element = $(element),
-				$slide = $element.closest(config.slide);
+				$slide = $element.closest(config.slide),
+				bgWasSet,
+				lazyLoadSrc = $element.data('src');
 
-			e.preventDefault();
-			//console.log($element)
-			//console.log('bla');
+			//e.preventDefault();
+			//console.log('lazybeforeunveil');
+			//console.log($element);
+			//console.log($slide);
 			
-			setSlideBg($slide, defer=true);
+			bgWasSet = setSlideBg($slide, true);
+			//console.log('bgWasSet '+ bgWasSet);
+			/*if ($element.bgWasSet) {
+				e.preventDefault();
+			}
+			if (!$element.bgWasSet) {
+				$element.attr('src', lazyLoadSrc);
+				//src = addClass('lazyloaded');
+				//lazySizes.loader.unveil(element);
+			}*/
 			
 		});
 		
@@ -450,7 +464,7 @@ function initSlides(config) {
 				boxProps = boxDataCache[boxIndex],
 				$boxSlides = boxProps.slides,
 				$slideActive = boxProps.slideActive,
-				allowChange = $box.hasClass('box-zoomed') || $box.hasClass('slide-box-carousel'),
+				allowChange = $box.hasClass('box-browse') || $box.hasClass('box-zoomed') || $box.hasClass('slide-box-carousel'),
 				pos = boxProps.pos,
 				$nextSlide;
 			
@@ -483,7 +497,7 @@ function initSlides(config) {
 			if (config.debug) {
 				//console.log($box);
 				//console.log($box.attr('class'));
-				console.log('\nboxIndex: '+boxIndex+', '+boxProps.slideCount+'slides,\n' + 
+				console.log('\nboxIndex: '+boxIndex+', '+boxProps.slideCount+' slides,\n' + 
 					'dir : ' + dir + ', allowChange: ' + allowChange);
 			}
 			
@@ -663,11 +677,12 @@ function initSlides(config) {
 			//if (config.debug) console.log($target);
 			activateBox($target);
 			getSlideIndex();
-		});
+		})
+		.on('prevSlide', prevSlide)
+		.on('nextSlide', nextSlide);
 
 		$slides.on('toggleZoom', function (event) {
 			var $target = $(event.target);
-			
 			//if (config.debug) console.log($target);
 			toggleZoom($target);
 		});
@@ -702,9 +717,9 @@ function initSlides(config) {
 			});
 		}
 		
-		$(document).on('click', '.slide-detail:not(.slide.playing)', function (event) {
-		// ZOOM OUT
-		
+		$(document)
+		.on('click', '.slide-detail:not(.slide.playing)', function (event) {
+			// ZOOM OUT
 			var $slide = $(this),
 				$box = $slide.parents('.slide-box'),
 				archiveUrl = $slide.data('archiveUrl');
@@ -712,19 +727,21 @@ function initSlides(config) {
 			event.stopPropagation();
 			if (config.debug) console.log('\nDetail slide clicked:' + $slide);
 			
-			if (!$box.hasClass('slide-box-carousel')) toggleZoom();
+			//if (!$box.hasClass('slide-box-carousel')) 
+			toggleZoom();
 			
-		}).on('click', '.controls .prev', prevSlide)
+		})
+		.on('click', '.controls .prev', prevSlide)
 		.on('click', '.controls .next', nextSlide)
 		.on('swiperight', prevSlide)
 		.on('swipeleft', nextSlide)
 		.on('click', '.controls .close', function (event) {
-		// ZOOM OUT
-		
+			// ZOOM OUT
 			event.preventDefault();
 			toggleZoom();
 			
-		}).on('click', '.number', function (event) {
+		})
+		.on('click', '.number', function (event) {
 
 			var $number = $(this),
 				$box = $number.closest(config.slideBox),
@@ -737,7 +754,8 @@ function initSlides(config) {
 			if (config.debug) console.log('number clicked ' + parseInt(no+1));
 			if (!$slide.hasClass('slide-active')) loadSlide($slide);
 			
-		}).on('keyup', function (e) {
+		})
+		.on('keyup', function (e) {
 			
 			switch (e.keyCode) {
 			case 27: // esc
@@ -762,16 +780,6 @@ function initSlides(config) {
 		getActiveBox();
 		loadSlideBgs($boxes);
 	}
-	/*
-	if (query.indexOf('zoom') > -1) {
-
-		if (query.indexOf('first') > -1) {
-			toggleSlide($slides.eq(0));
-		} else if (query.indexOf('last') > -1) {
-			toggleSlide($slides.eq($slides.length - 1));
-		}
-	}
-	*/
 	
 
 }
