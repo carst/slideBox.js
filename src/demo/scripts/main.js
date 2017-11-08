@@ -7,10 +7,6 @@ var gaProperty = 'UA-258870-1';
 
 // jshint ignore:start
 
-var debug = false,
-	mobile = false,
-	imgDirDefault = 'assets/images/';
-
 $(function () {
 
 	initSlides();

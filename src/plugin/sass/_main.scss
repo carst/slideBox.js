@@ -42,10 +42,12 @@
 						float: none;
 						width: 100% - 4*$gutter; height: 100% - 6*$gutter;
 						
-						opacity: 0;
 						background-size: contain;
 						transition-duration: 0s;
 						pointer-events: none; }
+
+.slide-detail:not(.slide-active)
+					{	opacity: 0; }
 
 
 /// ACTIVE SLIDE
@@ -53,23 +55,24 @@
 .slide-active,
 .slide-prev,
 .slide-next			{	display: block;
-						margin: 0; 
 						// box-sizing: border-box; 
 						//background-color: white;
 						transition-property: left, opacity !important;
 						transition-duration: 500ms !important;
 						transition-timing-function: ease-out !important;  }
-.slide-prev,
-.slide-next			{	opacity: 0 !important; }
 
 .slide-prev			{	left: -100%; }
 .slide-next			{	left: 100%; }
 
-.slide-active		{	}
+
+.box-zoomed .slide-active,
+.box-zoomed .slide-prev,
+.box-zoomed .slide-next
+					{	opacity: 1; }
 
 .box-zoomed .slide-active
 					{	left: 2*$gutter;
-						opacity: 1 !important; 
+						margin: 0; 
 						pointer-events: auto;
 						cursor: zoom-out; }
 
