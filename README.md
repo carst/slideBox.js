@@ -9,4 +9,5 @@ A jQuery plugin for easy creation of responsive lightbox-style media galleries a
 - 	Lazyloads images and video through [lazysizes.js](https://github.com/aFarkas/lazysizes).
 - 	Minimal styling included.
 	
-Find the compiled and minified version of the plugin and css in the directory ‘assets’. See [slidebox.vdmolen.xyz](http://slidebox.vdmolen.xyz) for basic setup and examples.
+Find the compiled and minified version of the plugin and css in the directory ‘[assets](https://github.com/carst/slideBox.js/tree/master/assets)’.
+See [slidebox.vdmolen.xyz](http://slidebox.vdmolen.xyz) for basic setup and examples.
