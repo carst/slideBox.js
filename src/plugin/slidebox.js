@@ -384,8 +384,8 @@ function initSlides(config) {
 		//}
 		
 		$pagerAnchors
-			.removeClass('active')
-			.eq(boxProps.pos).addClass('active');
+			.removeClass('active pg-item-active')
+			.eq(boxProps.pos).addClass('pg-item-active');
 		
 		if (boxProps.prevSlide.length === 0) {
 			$prev.addClass('disabled'); 
@@ -741,7 +741,7 @@ function initSlides(config) {
 			toggleZoom();
 			
 		})
-		.on('click', '.number', function (event) {
+		.on('click', '.number, .pg-item', function (event) {
 
 			var $number = $(this),
 				$box = $number.closest(config.slideBox),
@@ -751,7 +751,7 @@ function initSlides(config) {
 				$slide = $boxSlides.eq(no);
 
 			event.preventDefault();
-			if (config.debug) console.log('number clicked ' + parseInt(no+1));
+			if (config.debug) console.log('item clicked ' + parseInt(no+1));
 			if (!$slide.hasClass('slide-active')) loadSlide($slide);
 			
 		})

@@ -37,21 +37,31 @@ $carousel-height: $carousel-width / $carousel-ratio;
 
 .box-zoomed .pager	{	bottom: 0.5*$v-margin; }
 
+.pager li			{	display: inline-block; }
 
-.pager li			{	display: inline-block; height: 12px; line-height: 12px;
-						padding: $v-margin/4 $h-margin/6; }
-
-.pager .number		{	display: inline-block; margin: 5px 0;
-						width: 0; height: 0; padding: 0;
+.pg-item				{	display: inline-block;
+						
+						height: 12px; line-height: 12px;
+						width: 0; height: 0; 
+						
+						margin: 5px $h-margin/6;
+						
+						//padding: $v-margin/4 $h-margin/6;
+						padding: 0;
+						
 						border: 3px solid $accent;
 						border-radius: 3px;
 						font-size: 0; }
-.pager .number:hover
-					{	border-color: $accent; }
-.pager .active
-					{	border-color: black; }
+.pg-item:hover		{	border-color: $accent; }
+.pg-item-active		{	border-color: black; }
 
-a.active:link,
-a.active:visited,
-a.active:hover		{	border-color: $text;
+.pg-item-active:link,
+.pg-item-active:visited,
+.pg-item-active:hover
+					{	border-color: $text;
 						cursor: default; pointer-events: none; }
+
+/// BACKWARDS COMPATIBILITY
+.pager .number		{	@extend .pg-item; }
+.pager .active		{	@extend .pg-item-active; }
+
