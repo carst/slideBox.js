@@ -1,7 +1,8 @@
 // jshint ignore: start
 
-// @codekit-prepend 'includes/slidebox-globals.js'
-// @codekit-prepend 'includes/slidebox-util.js'
+// @codekit-prepend 'includes/globals.js'
+// @codekit-prepend 'includes/saveState.js'
+// @codekit-prepend 'includes/setBackground.js
 // @codekit-prepend 'includes/jquery.scrollLock.simple.js'
 // @codekit-append 'includes/lazysizes.js'
 
