@@ -76,3 +76,40 @@ a.disabled:hover		{	color: rgba(0,0,0,0.0);
 
 .arrow.next			{	cursor: url($imgdir+'arrow-long-right.svg'), url($imgdir+'arrow-long-right.png'), pointer; }
 
+
+/// VIDEO CONTROLS
+
+.play,
+.entry .play			{	display: block; position: absolute; 
+						top: 0; left: 0; bottom: 0; right: 0;
+						/* overflow: auto; */ margin: auto; 
+						border: $v-margin solid white; border-radius: 1.5*$v-margin;
+						width: 0; height: 0; background: white;
+						transition: all 250ms ease-out;
+						opacity: 1; pointer-events: all; }
+
+.play-triangle		{	z-index: 10; display: block; position: absolute;
+						top: -$h-margin/3; left: -$h-margin/6;
+						border-color: transparent transparent transparent $black; 
+						border-style: solid;
+						border-width: $h-margin/3 $h-margin/2; }
+
+.play:hover			{	border-width: 1.1*$v-margin; /* border-color: $text-hover; */ }
+.play:hover .play-triangle
+					{	border-left-color: $accent; }
+
+.entry .play:link,
+.entry .play:visited{	border-color: white; }
+
+.entry .play:hover	{	border-color: $accent; }
+.entry .play:hover .play-triangle
+					{	border-left-color: white; }
+
+.playing .play		{	opacity: 0; pointer-events: none; }
+
+@media only screen and (max-width: $phone-large) {
+	
+	.play,
+	.entry .play		{	opacity: 0; }
+	
+}

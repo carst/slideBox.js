@@ -1,4 +1,4 @@
-// jshint ignore: start
+// shint ignore: start
 
 // @codekit-prepend 'includes/globals.js'
 // @codekit-prepend 'includes/saveState.js'
@@ -6,22 +6,29 @@
 // @codekit-prepend 'includes/jquery.scrollLock.simple.js'
 // @codekit-append 'includes/lazysizes.js'
 
-var slideBoxCm = {};
+var slideBoxCm = {
+	initialized : false
+};
 
-function initSlides(config) {
+function initSlides(settings) {
 
-	var defaults = {
+	if (!slideBoxCm.initialized) {
+		
+		//if (debug) 
+		//console.log('initSlides: slideBox is being initialized.');
+		
+		var defaults = {
 			container	: '.slide-box', 
-			slideBox 	: '.slide-box',
-			slide 		: '.slide',
+			slideBox		: '.slide-box',
+			slide		: '.slide',
 			slideBoxClick : false,
 			setPath		: false,
 			wrapSlides	: false,
 			loopSlides	: false,
-			interval 	: 5000,
-			debug 		: debug
+			interval		: 5000,
+			debug		: true //debug
 		},
-		config = typeof(config) === 'object' ? config : defaults,
+		config = typeof(settings) === 'object' ? settings : defaults,
 
 		$boxes = $(config.slideBox),
 		$boxActive = $(),
@@ -42,15 +49,17 @@ function initSlides(config) {
 			'next'	: +1
 		};
 	
-	//config.wrapSlides = slideCount > 1 && $container.hasClass('wrap-slides');
-	//config.loopSlides = slideCount > 1 && $container.hasClass('auto-loop');
-	
-	if (config.debug) {
-		console.log(config);
-		//console.log('globalControls '+globalControls);
-		//console.log($slides);
+		//config.wrapSlides = slideCount > 1 && $container.hasClass('wrap-slides');
+		//config.loopSlides = slideCount > 1 && $container.hasClass('auto-loop');
+		
+		if (config.debug) {
+			console.log(config);
+			//console.log('globalControls '+globalControls);
+			//console.log($slides);
+		}
+	} else {
+		console.log('initSlides: slideBox was already initialized.');
 	}
-	
 	
 	function initBoxes() {
 		
@@ -202,9 +211,9 @@ function initSlides(config) {
 						next : $next	,
 						close: $close
 				},
-				pager 		: {
-						el	 : $pager,
-						a	 : $pagerAnchors
+				pager		: {
+						el	: $pager,
+						a	: $pagerAnchors
 				}
 			};
 		
@@ -317,9 +326,9 @@ function initSlides(config) {
 	}
 	
 	
-	function getSlideIndex(boxIndex) {
+	function getSlideIndex(supIndex) {
 		
-		var boxIndex = typeof boxIndex !== 'undefined' ? boxIndex : $boxes.index($boxActive),
+		var boxIndex = typeof supIndex !== 'undefined' ? supIndex : $boxes.index($boxActive),
 			$box = typeof boxIndex !== 'undefined' ? $boxes.eq(boxIndex) : $boxActive,
 			boxProps = boxDataCache[boxIndex],
 			$boxSlides = boxProps.slides,
@@ -332,8 +341,8 @@ function initSlides(config) {
 
 		function getAdjacentSlides() {
 			
-			prev = boxProps.pos + delta['prev'],
-			next = boxProps.pos + delta['next'];
+			prev = boxProps.pos + delta.prev; //delta['prev'],
+			next = boxProps.pos + delta.next; //delta['next'];
 			
 			// DO NOT WRAP SLIDES:
 			/*boxProps.prevSlide = prev >= 0 ? $boxSlides.eq(prev) : $();
@@ -453,9 +462,9 @@ function initSlides(config) {
 	}
 	
 	
-	function changeSlide($box, dir) {
+	function changeSlide($box, direction) {
 	
-		var dir = typeof dir !== 'undefined' ? dir : '';
+		var dir = typeof direction !== 'undefined' ? direction : '';
 		
 		$box.each(function() {
 		/// ALLOW FOR BOX TO BE A COLLECTION
@@ -542,14 +551,14 @@ function initSlides(config) {
 	
 	
 	function prevSlide(event) {
-		
+	
 		var $box = findBox(event);
 		changeSlide($box, 'prev');
 	}
 	
 	
 	function nextSlide(event) {
-		
+	
 		var $box = findBox(event);
 		changeSlide($box, 'next');
 	}
@@ -773,14 +782,22 @@ function initSlides(config) {
 
 	}
 
-	if ($boxes.length > 0) {
+	// MAIN PLUGIN LOGIC
+	if (!slideBoxCm.initialized && $boxes.length > 0) {
 		
 		initBoxes();
 		addEvents();
 
 		getActiveBox();
-		loadSlideBgs($boxes);
+		//loadSlideBgs($boxes);
+	
+		slideBoxCm.initialized = true;
+		
+		console.log('initSlides: slideBox was initialized.');
 	}
 	
-
 }
+
+$(function () {
+	initSlides();
+});

@@ -1,0 +1,18 @@
+
+/// CAPTIONS
+
+.slide-caption		{	margin-top: $v-margin/2; margin-bottom: 0;
+						// width: 75%;
+						/* transition: opacity 150ms ease-out; */ }
+
+.slide-detail .slide-caption
+					{	position: absolute;
+						left: 0; top: 100%; right: 0;
+						/* margin: auto; */ overflow: auto;
+						opacity: 0; }
+					
+.slide-active .slide-caption
+					{	opacity: 1; }
+
+.hide-caption .caption
+					{	display: none; }

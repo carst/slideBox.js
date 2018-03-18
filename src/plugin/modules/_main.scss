@@ -80,28 +80,11 @@
 						background-size: auto; }
 					
 
-/// CAPTIONS */
-
-.slide-caption		{	margin-top: $v-margin/2; margin-bottom: 0;
-						// width: 75%;
-						/* transition: opacity 150ms ease-out; */ }
-
-.slide-detail .slide-caption
-					{	position: absolute;
-						left: 0; top: 100%; right: 0;
-						/* margin: auto; */ overflow: auto;
-						opacity: 0; }
-					
-.slide-active .slide-caption
-					{	opacity: 1; }
-
-.hide-caption .caption
-					{	display: none; }
 
 
 
 
-@media only screen and (max-width: $screen-width-tp) {
+@media only screen and (max-width: $tablet-portrait) {
 
 	.box-zoomed			{	position: fixed; //overflow: hidden;
 							min-height: 100%; }
@@ -118,7 +101,7 @@
 }
 
 
-@media only screen and (max-width: $screen-width-sl) {
+@media only screen and (max-width: $phone-large) {
 	
 	.slide-detail		{	top: $gutter-sl/2;
 							height: 100% - 3*$gutter-sl;

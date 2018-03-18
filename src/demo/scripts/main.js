@@ -1,5 +1,5 @@
 var gaProperty = 'UA-258870-1';
-	
+
 // @codekit-prepend 'includes/codeformatting.js'
 // @codekit-prepend 'includes/smoothscroll.js'
 
@@ -8,7 +8,5 @@ var gaProperty = 'UA-258870-1';
 // jshint ignore:start
 
 $(function () {
-
-	initSlides();
-	
+	loadSlideBgs($('.ex-1-grid'));
 });

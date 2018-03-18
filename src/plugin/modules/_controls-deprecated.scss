@@ -1,0 +1,13 @@
+.slide-active a.playbutton
+					{	display: none; }
+
+a.playbutton			{	z-index: 300; display: block;
+						position: absolute; right: 5px; bottom: 5px; 
+						width: 12px; height: 12px; border: none; }
+a.playbutton.loading{	background: url(images/loading.gif); }
+a.playbutton.play	{	background: url(images/play.png); }
+a.playbutton.pause	{	background: url(images/pause.png); }
+						
+a.playbutton:link,
+a.playbutton:visited{	opacity: 1.0; }
+a.playbutton:hover	{	opacity: 0.5; }
