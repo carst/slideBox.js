@@ -26,7 +26,7 @@ function initSlides(settings) {
 			wrapSlides	: false,
 			loopSlides	: false,
 			interval		: 5000,
-			debug		: true //debug
+			debug		: debug
 		},
 		config = typeof(settings) === 'object' ? settings : defaults,
 
