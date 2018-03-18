@@ -58,7 +58,7 @@ function initSlides(settings) {
 			//console.log($slides);
 		}
 	} else {
-		console.log('initSlides: slideBox was already initialized.');
+		if (config.debug) console.log('initSlides: slideBox was already initialized.');
 	}
 	
 	function initBoxes() {
@@ -793,7 +793,7 @@ function initSlides(settings) {
 	
 		slideBoxCm.initialized = true;
 		
-		console.log('initSlides: slideBox was initialized.');
+		if (config.debug) console.log('initSlides: slideBox was initialized.');
 	}
 	
 }
