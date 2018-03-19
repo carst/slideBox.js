@@ -58,7 +58,7 @@ function initSlides(settings) {
 			//console.log($slides);
 		}
 	} else {
-		if (config.debug) console.log('initSlides: slideBox was already initialized.');
+		if (debug) console.log('initSlides: slideBox was already initialized.');
 	}
 	
 	function initBoxes() {
@@ -274,7 +274,6 @@ function initSlides(settings) {
 			
 			var element = e.target,
 				$element = $(element),
-				$slide = $element.closest(config.slide),
 				bgWasSet,
 				lazyLoadSrc = $element.data('src');
 
@@ -283,7 +282,7 @@ function initSlides(settings) {
 			//console.log($element);
 			//console.log($slide);
 			
-			bgWasSet = setSlideBg($slide, true);
+			bgWasSet = setSlideBg($element, true);
 			//console.log('bgWasSet '+ bgWasSet);
 			/*if ($element.bgWasSet) {
 				e.preventDefault();
@@ -781,6 +780,7 @@ function initSlides(settings) {
 		});
 
 	}
+
 
 	// MAIN PLUGIN LOGIC
 	if (!slideBoxCm.initialized && $boxes.length > 0) {
