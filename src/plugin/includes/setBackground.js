@@ -1,10 +1,13 @@
 // jshint ignore: start
 
-function setSlideBg($slide, defer) {
+
+
+function setSlideBg($element, defer) {
 		
-	var bgWasSet = false,
-		$img = $slide.is('img') ? $slide : $slide.children('img'),
+	var $img = $element.is('img') ? $element : $element.children('img'),
+		bgWasSet = $img.hasClass('bg-set'),
 		bgSrc,
+		$bgTarget,
 		fullImg = new Image(),
 		loaded = false,
 		imgDir = typeof imgDirDefault !== 'undefined' ? imgDirDefault : 'images/';
@@ -27,41 +30,37 @@ function setSlideBg($slide, defer) {
 		return bgSrc;
 	}
 	
-	function loadHandler() {
+	function findBgTarget($img) {
 		
-		/*
-		if (loaded) { 
-			return;
-		}
-		loaded = true;
-		*/
-		
-		//trace('src ' + this.src);
-		//trace('full Images src' + fullImg);
-		
-		$slide
-			.removeClass('loading')
-			.css('background-image', 'url(' + bgSrc + ')')
-			.addClass('has-bg');
-
-		if ($slide.is('img')) $img.attr('src', imgDir + 'blank.gif');
-		
+		$bgTarget = $img.hasClass('slide') ? $img : $img.parent();
 	}
 	
-	if ($slide.is('a')) $img = $slide.find('img');
+	function loadHandler() {
+		
+		$bgTarget
+			.css('background-image', 'url(' + bgSrc + ')')
+			.addClass('has-bg');
+		
+		$img
+			.removeClass('loading')
+			.addClass('bg-set');
+
+		//$img.attr('src', imgDir + 'blank.gif');
+	}
 	
-	//console.log($img);
-	
-	if ($img.length > 0 && !$slide.hasClass('has-bg')) {
+	//if ($slide.is('a')) $img = $slide.find('img');
+	if ($img.length > 0 && !bgWasSet) {
+		
+		if (debug) console.log($img);
 		
 		bgSrc = findBgSrc($img);
+		findBgTarget($img);
 		//if (debug) 
 		//console.log('bgSrc : ' + bgSrc);
 		if (typeof bgSrc !== 'undefined') {
-			$slide.addClass('loading');
+			$img.addClass('loading');
 			fullImg.onload = loadHandler();
 			fullImg.src = bgSrc;
-			bgWasSet = true;
 		}
 	}
 	
