@@ -4,25 +4,24 @@ $carousel-width: percentage(1/2);
 $carousel-ratio: 4/3;
 $carousel-height: $carousel-width / $carousel-ratio;
 
-.slide-box-carousel	{	position: relative;
-						height: 2*$v-margin; 
+.box-carousel		{	position: relative;
 						width: $carousel-width;
-						padding-bottom: $carousel-height; }
+						height: 2*$v-margin; 
+						padding-bottom: $carousel-height;
+						overflow: hidden; }
 
 .slide-carousel:not(.slide-detail)
-					{	position: absolute;
-						top: 0; left: 0;
+					{	top: 0;
 						width: 100%; height: 0;
 						padding-bottom: percentage(1/$carousel-ratio);
 						background-size: cover;
 						cursor: inherit; }
 
-.slide-carousel:not(.slide-active)
-					{	opacity: 0;
-						pointer-events: none; }
+.slide-carousel:not(.slide-active,.slide-next, .slide-prev)
+					{	pointer-events: none;
+						opacity: 0; }
 
-.slide-box-carousel .slide
-					{	@extend .slide-carousel; }
+.box-carousel .slide{	@extend .slide-carousel; }
 
 
 /// PAGER
@@ -40,16 +39,13 @@ $carousel-height: $carousel-width / $carousel-ratio;
 .pager li			{	display: inline-block; }
 
 .pg-item				{	display: inline-block;
-						
+						box-sizing: border-box;
 						height: 12px; line-height: 12px;
-						width: 0; height: 0; 
-						
+						width: 6px; height: 6px;
 						margin: 5px $h-margin/6;
-						
-						//padding: $v-margin/4 $h-margin/6;
 						padding: 0;
-						
-						border: 3px solid $accent;
+						background-color: $text;
+						border: 1px solid $text;
 						border-radius: 3px;
 						font-size: 0; }
 .pg-item:hover		{	border-color: $accent; }
@@ -58,10 +54,12 @@ $carousel-height: $carousel-width / $carousel-ratio;
 .pg-item-active:link,
 .pg-item-active:visited,
 .pg-item-active:hover
-					{	border-color: $text;
+					{	background-color: white; border-color: $text;
 						cursor: default; pointer-events: none; }
 
 /// BACKWARDS COMPATIBILITY
+.slide-box-carousel	{	@extend .box-carousel; }
+
 .pager .number		{	@extend .pg-item; }
 .pager .active		{	@extend .pg-item-active; }
 

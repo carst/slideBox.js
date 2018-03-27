@@ -1,16 +1,14 @@
 // jshint ignore: start
 
-
-
 function setSlideBg($element, defer) {
 		
-	var $img = $element.is('img') ? $element : $element.children('img'),
+	var $isImg = $element.is('img'),
+		$img = $isImg ? $element : $element.children('img'),
 		bgWasSet = $img.hasClass('bg-set'),
 		bgSrc,
 		$bgTarget,
 		fullImg = new Image(),
-		loaded = false,
-		imgDir = typeof imgDirDefault !== 'undefined' ? imgDirDefault : 'images/';
+		loaded = false;
 	
 	function findBgSrc($img) {
 		
@@ -44,8 +42,14 @@ function setSlideBg($element, defer) {
 		$img
 			.removeClass('loading')
 			.addClass('bg-set');
-
-		//$img.attr('src', imgDir + 'blank.gif');
+		
+		bgWasSet = true;
+		
+		if ($bgTarget.is('img')) {
+			//$img.src = '';
+			//console.log($img.attr('class'));
+			$img.attr('src', slideBoxCm.imageDir + 'blank.gif');
+		}
 	}
 	
 	//if ($slide.is('a')) $img = $slide.find('img');

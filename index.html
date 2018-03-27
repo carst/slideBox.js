@@ -4,8 +4,8 @@
 	<meta charset="utf-8">
 	<title>slideBox.js</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="stylesheet" href="demo/demo.css" type="text/css">
 	<link rel="stylesheet" href="assets/slidebox.css" type="text/css">
+	<link rel="stylesheet" href="demo/demo.css" type="text/css">
 	
 	<link rel="apple-touch-icon" sizes="512x512" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -114,7 +114,7 @@
 <section id="ex-2-carousel">
 	<h3>Example 2: Carousel</h3>
 
-	<div class="slide-box slide-box-carousel ex-2-carousel">
+	<div class="slide-box box-carousel ex-2-carousel">
 		<img class="slide lazyload" data-src="demo/media/Zermatt.jpg" alt="Zermatt" width="1500" height="1075" />
 		<img class="slide lazyload" data-src="demo/media/Projet-pour-un-Jardin.jpg" alt="Projet-pour-un-Jardin" width="640" height="959" />
 		<img class="slide lazyload" data-src="demo/media/Container-im-Hamburger-Hafen.jpg" alt="Container-im-Hamburger-Hafen" width="4003" height="2251" />
@@ -136,9 +136,9 @@
 		</div>
 	</div>
 		
-	<p>Create a carousel by adding the class <code>slide-box-carousel</code> to your container. Carousels have support built-in for pager functionality. The pager needs to be included in the <abbr>HTML</abbr>.</p>
+	<p>Create a carousel by adding the class <code>box-carousel</code> to your container. Carousels have pager support built-in. If you want a pager, include it in <abbr>HTML</abbr> following the structure below.</p>
 	
-	<pre><code class="codeblock"><!--<div class="slide-box slide-box-carousel">
+	<pre><code class="codeblock"><!--<div class="slide-box box-carousel">
 	<img class="slide" src="img1.jpg">
 	<img class="slide" src="img2.jpg">
 	<img class="slide" src="img3.jpg">
@@ -159,15 +159,14 @@
 	<p>As a starting point, the default <code>slidebox.css</code> provides a responsive width of 50% as a starting point, with an image ratio of 4/3. You can override this in your own <abbr>CSS</abbr>. For instance, if you need the carousel to have a fixed width.<!-- You can set different dimensions through data attributes on the carousel, <code>data-width</code> and <code>data-ratio</code>: --><br>
 	The carousel above has been set to 100% of its parent by defining these styles:</p>
 
-	<pre><code class="codeblock"><!--.ex-2-carousel		{	position: relative;
-						width: 100% !important;
-						padding-bottom: 75% !important; }--></code></pre>
+	<pre><code class="codeblock"><!--.ex-2-carousel		{	width: 100%;
+						padding-bottom: 75%; }--></code></pre>
 						
-	<p>For now, use the keyword <code>!important</code> to make sure the override sticks.</p>
+	<p>Make sure to load your CSS after the included stylesheet.</p>
 
 	<h3>Example 2A: Automatic Looping</h3>
 
-	<div class="slide-box slide-box-carousel ex-2-carousel" data-loop="false" data-interval="2500"> 		<img class="slide lazyload" data-src="demo/media/Im-Lauf-der-Zeit.jpg" alt="Im-Lauf-der-Zeit" width="1000" height="625">
+	<div class="slide-box box-carousel ex-2-carousel" data-loop="true" data-interval="2500"> 		<img class="slide lazyload" data-src="demo/media/Im-Lauf-der-Zeit.jpg" alt="Im-Lauf-der-Zeit" width="1000" height="625">
 		<img class="slide lazyload" data-src="demo/media/SIPA-121.jpg" alt="SIPA-121" width="1000" height="669">
 		<img class="slide lazyload" data-src="demo/media/North-by-Northwest.jpg" alt="North-by-Northwest" width="960" height="538">
 		
@@ -187,7 +186,7 @@
 		<dd>Time between slide transitions in ms.<br>[default: 5000ms]</dd>
 	</ul>
 	
-	<pre><code class="codeblock"><!--<div class="slide-box slide-box-carousel" data-loop="true" data-interval="2500">
+	<pre><code class="codeblock"><!--<div class="slide-box box-carousel" data-loop="true" data-interval="2500">
 	<img class="slide" src="img1.jpg">
 	<img class="slide" src="img2.jpg">
 	<img class="slide" src="img3.jpg">
@@ -233,6 +232,7 @@
 </article>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<!-- <script type="text/javascript" src="demo/scripts/dollar.js"></script> -->
 <script type="text/javascript" src="assets/slidebox-min.js"></script>
 <script type="text/javascript" src="demo/scripts/main-min.js"></script>
 </body>
