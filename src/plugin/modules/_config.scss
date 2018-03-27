@@ -1,8 +1,10 @@
 
-/// MEASURES
+/// BREAKPOINTS
 
 $tablet-portrait: 768px !default;
 $phone-large: 640px !default;
+
+/// DIMENSIONS
 
 $h-margin: 24px !default;
 $v-margin: 24px !default;
@@ -17,6 +19,6 @@ $black: #000 !default;
 $blue: rgb(0, 51, 235) !default;
 $accent: $blue !default;
 
-/// OTHER
+/// PATHS
 
-$imgdir: 'images/' !default;
+$image_dir: 'images/' !default;

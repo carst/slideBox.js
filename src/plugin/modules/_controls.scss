@@ -8,7 +8,7 @@
 						pointer-events: none;
 						transition: all 250ms ease-in; }
 
-.slide-box-carousel:not(.box-zoomed) .controls
+.box-carousel:not(.box-zoomed) .controls
 					{	position: absolute; }
 
 
@@ -23,7 +23,7 @@
 
 .slide-box:not(.box-zoomed) .close
 					{	@extend .widget-hide; }
-.slide-box:not(.box-zoomed, .slide-box-carousel) .arrow
+.slide-box:not(.box-zoomed, .box-carousel) .arrow
 					{	@extend .widget-hide; }
 					
 .controls a			{	line-height: 16px; text-align: center; }
@@ -42,8 +42,8 @@
 						background-size: 36px 36px;
 						font-size: 0; }
 .close:link,
-.close:visited		{	background-image: url($imgdir+'widget-close.svg'); }
-.close:hover			{	background-image: url($imgdir+'widget-close-over.svg'); }
+.close:visited		{	background-image: url($image_dir+'widget-close.svg'); }
+.close:hover			{	background-image: url($image_dir+'widget-close-over.svg'); }
 
 
 /// WIDGETS: ARROWS */
@@ -72,9 +72,9 @@ a.disabled:hover		{	color: rgba(0,0,0,0.0);
 						text-align: right; }
 .next				{	right: 0; }
 
-.arrow.prev			{	cursor: url($imgdir+'arrow-long-left.svg'), url($imgdir+'arrow-long-left.png'), pointer; }
+.arrow.prev			{	cursor: url($image_dir+'arrow-long-left.svg'), url($image_dir+'arrow-long-left.png'), pointer; }
 
-.arrow.next			{	cursor: url($imgdir+'arrow-long-right.svg'), url($imgdir+'arrow-long-right.png'), pointer; }
+.arrow.next			{	cursor: url($image_dir+'arrow-long-right.svg'), url($image_dir+'arrow-long-right.png'), pointer; }
 
 
 /// VIDEO CONTROLS

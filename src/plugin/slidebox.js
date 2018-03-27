@@ -1,4 +1,8 @@
-// shint ignore: start
+// jshint ignore: start
+
+// codekit-prepend 'matchMedia.js'
+// codekit-prepend 'defineMobile.js'
+// codekit-prepend 'jquery.mobile-events.js'
 
 // @codekit-prepend 'includes/globals.js'
 // @codekit-prepend 'includes/saveState.js'
@@ -7,7 +11,8 @@
 // @codekit-append 'includes/lazysizes.js'
 
 var slideBoxCm = {
-	initialized : false
+	initialized : false,
+	imageDir		: typeof(imageDir) !== 'undefined' ? imageDir : './assets/images/'
 };
 
 function initSlides(settings) {
@@ -182,6 +187,7 @@ function initSlides(settings) {
 				slideCount = $slides.length,
 				$slideActive = $box.find('.slide-active'),
 				hasActiveSlide = $slideActive.length > 0,
+				isCarousel = $box.data('carousel') || $box.hasClass('box-carousel') || $box.hasClass('slide-box-carousel'),
 				loopBox = $box.data('loop') || $box.hasClass('auto-loop') || $parent.hasClass('auto-loop'),
 				interval = $box.data('interval') ? $box.data('interval') : config.interval,
 				$controls = $parent.find('.controls'),
@@ -192,10 +198,7 @@ function initSlides(settings) {
 				$pager = $box.find('.pager'),
 				$pagerAnchors = $pager.find('a');
 			
-			if (!hasActiveSlide) {
-				$slideActive = $slides.eq(0);
-				$slideActive.addClass('slide-active');
-			}
+			if (!hasActiveSlide) $slideActive = $slides.eq(0);
 			
 			if (slideCount === 1) $next.addClass('disabled');
 			
@@ -205,6 +208,7 @@ function initSlides(settings) {
 				slideCount	: slideCount,
 				slideActive : $slideActive.length > 0 ? $slideActive : $slides.eq(0),
 				pos			: $slideActive.length > 0 ? $slides.index($slideActive) : 0,
+				isCarousel	: isCarousel,
 				controls		: {
 						el   : $controls,
 						prev : $prev,
@@ -216,13 +220,22 @@ function initSlides(settings) {
 						a	: $pagerAnchors
 				}
 			};
+
+			
+			/// INIT CAROUSEL
+			if (isCarousel) {
+				getSlideIndex(boxIndex);
+				
+				$slideActive.addClass('slide-active');
+				boxDataCache[boxIndex].prevSlide.addClass('slide-prev');
+				boxDataCache[boxIndex].nextSlide.addClass('slide-next');
+			
+				if (loopBox && slideCount > 1) {
 		
-			/// START CAROUSEL
-			if (loopBox && slideCount > 1) {
-	
-				setInterval(function() {
-					changeSlide($box, 'next');
-				}, interval);
+					setInterval(function() {
+						changeSlide($box, 'next');
+					}, interval);
+				}
 			}
 			
 		});
@@ -280,14 +293,13 @@ function initSlides(settings) {
 			//e.preventDefault();
 			//console.log('lazybeforeunveil');
 			//console.log($element);
-			//console.log($slide);
 			
 			bgWasSet = setSlideBg($element, true);
 			//console.log('bgWasSet '+ bgWasSet);
-			/*if ($element.bgWasSet) {
+			//if ($element.bgWasSet) {
 				e.preventDefault();
-			}
-			if (!$element.bgWasSet) {
+			//}
+			/*if (!$element.bgWasSet) {
 				$element.attr('src', lazyLoadSrc);
 				//src = addClass('lazyloaded');
 				//lazySizes.loader.unveil(element);
@@ -419,14 +431,17 @@ function initSlides(settings) {
 			boxIndex = $boxes.index($box),
 			boxProps = boxDataCache[boxIndex],
 			slug = $slide.attr('id'),
+			nextIsPrev,
+			prevIsNext,
 			itemPath = createPath(initialState.path, slug),
 			itemTitle = $box.find('.list-item-title').text(),
 			itemState = createState(itemPath, itemTitle);
-
+			
 		// CLEAN UP
 		boxProps.slides
-			.removeClass('slide-prev slide-next playing')
-			.not($slide).removeClass('slide-active');
+			.removeClass('playing');
+			//.not($slide).removeClass('slide-active');
+		$('#slide-copy').remove();
 		
 		// PAUSE ALL VIDEOS
 		//console.log(boxProps.videos);
@@ -437,6 +452,7 @@ function initSlides(settings) {
 		
 		if (!$slide.hasClass('slide-active')) {
 			
+			boxProps.slides.removeClass('slide-active');
 			$slide.addClass('slide-active');
 			$(document).trigger('slideChanged');
 			
@@ -445,19 +461,40 @@ function initSlides(settings) {
 			// LOAD NEW PATH here
 			if (config.setPath) loadState(itemState);
 			
-			boxProps.prevSlide.addClass('slide-prev');
-			boxProps.nextSlide.addClass('slide-next');
+			nextIsPrev = boxProps.nextSlide.hasClass('slide-prev');
+			prevIsNext = boxProps.prevSlide.hasClass('slide-next');
+			boxProps.slides.removeClass('slide-prev slide-next prev-to-next next-to-prev');
+			
+			if (nextIsPrev) {
+				console.log('nextIsPrev');
+				boxProps.nextSlide.clone()
+					.addClass('prev-out')
+					.attr('id', 'slide-copy')
+					.insertBefore(boxProps.nextSlide);
+				boxProps.nextSlide.addClass('prev-to-next');
+				
+			} else {
+				boxProps.nextSlide.addClass('slide-next');
+			}
+			if (prevIsNext) {
+				console.log('prevIsNext');
+				boxProps.prevSlide.clone()
+					.insertBefore(boxProps.prevSlide)
+					.addClass('prev-out')
+					.attr('id', 'slide-copy');
+				boxProps.prevSlide.addClass('next-to-prev');
+				//boxProps.prevSlide.addClass('slide-prev').removeClass('prev-to-next');
+			} else {
+				boxProps.prevSlide.addClass('slide-prev');
+			}
 				
 		} else {
 			
-			//$box.removeClass('box-active');
 			$slide.removeClass('slide-active');
-
 		}
 		
 		setControlIndex(boxIndex);
 		setScroll($box);
-		
 	}
 	
 	
@@ -473,7 +510,7 @@ function initSlides(settings) {
 				boxProps = boxDataCache[boxIndex],
 				$boxSlides = boxProps.slides,
 				$slideActive = boxProps.slideActive,
-				allowChange = $box.hasClass('box-browse') || $box.hasClass('box-zoomed') || $box.hasClass('slide-box-carousel'),
+				allowChange = $box.hasClass('box-browse') || $box.hasClass('box-zoomed') ||boxProps.isCarousel,
 				pos = boxProps.pos,
 				$nextSlide;
 			
@@ -630,9 +667,8 @@ function initSlides(settings) {
 			$box.removeClass('box-zoomed');
 			$boxZoomed = $();
 			
-			//boxProps.slides.removeClass('slide-active slide-prev slide-next slide-detail');
 			boxProps.slides.removeClass('slide-detail');
-			if (!$box.hasClass('slide-box-carousel'))
+			if (!boxProps.isCarousel)
 				boxProps.slides.removeClass('slide-active slide-prev slide-next');
 			boxProps.videos.trigger('pauseVideo');
 			
@@ -646,9 +682,9 @@ function initSlides(settings) {
 			//scrollToTarget($slideActive);
 			//$(document).scrollTop( $slideActive.offset().top );
 			//$('html,body').scrollTop( $slideActive.offset().top );
-			$('html,body').animate({
+			/*$('html,body').animate({
 				scrollTop: $slideActive.offset().top - 60
-			}, 0);
+			}, 0);*/
 		
 			$(document).trigger('zoomedOut');
 			
@@ -717,7 +753,7 @@ function initSlides(settings) {
 				loadBox($(this)); 
 			});
 		} else {
-			$(document).on('click', '.slide:not(.slide-detail,.slide.playing)', function (event) {
+			$(document).on('click', '.slide:not(a,.slide-detail,.slide.playing)', function (event) {
 			// ZOOM IN
 
 				event.stopPropagation();
@@ -727,57 +763,55 @@ function initSlides(settings) {
 		}
 		
 		$(document)
-		.on('click', '.slide-detail:not(.slide.playing)', function (event) {
+			.on('click', '.slide-detail:not(.slide.playing)', function (event) {
 			// ZOOM OUT
-			var $slide = $(this),
-				$box = $slide.parents('.slide-box'),
-				archiveUrl = $slide.data('archiveUrl');
-			
-			event.stopPropagation();
-			if (config.debug) console.log('\nDetail slide clicked:' + $slide);
-			
-			//if (!$box.hasClass('slide-box-carousel')) 
-			toggleZoom();
-			
-		})
-		.on('click', '.controls .prev', prevSlide)
-		.on('click', '.controls .next', nextSlide)
-		.on('swiperight', prevSlide)
-		.on('swipeleft', nextSlide)
-		.on('click', '.controls .close', function (event) {
-			// ZOOM OUT
-			event.preventDefault();
-			toggleZoom();
-			
-		})
-		.on('click', '.number, .pg-item', function (event) {
-
-			var $number = $(this),
-				$box = $number.closest(config.slideBox),
-				boxIndex = $boxes.index($box),
-				$boxSlides = boxDataCache[boxIndex].slides,
-				no = boxDataCache[boxIndex].pager.a.index($number),
-				$slide = $boxSlides.eq(no);
-
-			event.preventDefault();
-			if (config.debug) console.log('item clicked ' + parseInt(no+1));
-			if (!$slide.hasClass('slide-active')) loadSlide($slide);
-			
-		})
-		.on('keyup', function (e) {
-			
-			switch (e.keyCode) {
-			case 27: // esc
+				var $slide = $(this),
+					$box = $slide.parents('.slide-box'),
+					archiveUrl = $slide.data('archiveUrl');
+				
+				event.stopPropagation();
+				if (config.debug) console.log('\nDetail slide clicked:' + $slide);
+				
 				toggleZoom();
-				break;
-			case 37: // left <-
-				prevSlide();
-				break;
-			case 39: // right ->
-				nextSlide();
-				break;
-			}
-		});
+			})
+			.on('click', '.controls .prev', prevSlide)
+			.on('click', '.controls .next', nextSlide)
+			.on('swiperight', prevSlide)
+			.on('swipeleft', nextSlide)
+			.on('click', '.controls .close', function (event) {
+				// ZOOM OUT
+				event.preventDefault();
+				toggleZoom();
+				
+			})
+			.on('click', '.number, .pg-item', function (event) {
+	
+				var $number = $(this),
+					$box = $number.closest(config.slideBox),
+					boxIndex = $boxes.index($box),
+					$boxSlides = boxDataCache[boxIndex].slides,
+					no = boxDataCache[boxIndex].pager.a.index($number),
+					$slide = $boxSlides.eq(no);
+	
+				event.preventDefault();
+				if (config.debug) console.log('item clicked ' + parseInt(no+1));
+				if (!$slide.hasClass('slide-active')) loadSlide($slide);
+				
+			})
+			.on('keyup', function (e) {
+				
+				switch (e.keyCode) {
+				case 27: // esc
+					toggleZoom();
+					break;
+				case 37: // left <-
+					prevSlide();
+					break;
+				case 39: // right ->
+					nextSlide();
+					break;
+				}
+			});
 
 	}
 

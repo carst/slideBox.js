@@ -5,89 +5,130 @@
 
 .box-active			{	z-index: 100; }
 					
-.slide				{	background-repeat: no-repeat;
-						background-size: contain;
-						background-position: center center;
+.slide				{	left: auto;
 						//transition: all 250ms ease-out; 
-						pointer-events: none; }
+						//pointer-events: none; 
+						}
 
 .slide:not(.slide-detail)
-					{	pointer-events: auto;
+					{	//pointer-events: auto;
 						cursor: zoom-in; }
+
+.has-bg				{	background-repeat: no-repeat;
+						background-size: contain;
+						background-position: center center; }
 
 .has-bg img			{	opacity: 0; }
 
 
+/// POSITIONING
+
+.slide-positioned	{	position: absolute; }
+
+.slide-detail,
+.slide-carousel		{	@extend .slide-positioned; }
+
+/*.box-zoomed,
+.box-carousel		{	@extend .box-slideshow; }*/
+
 
 /// DETAIL VIEW
 
-.box-active,
-.box-zoomed			{	overflow-x: hidden; }
-
-.box-zoomed			{	position: fixed !important;
+.slide-box.box-zoomed
+					{	position: fixed;
+						top: 0; left: 0;
 						z-index: 200; 
-						width: 100vw !important; min-height: 100vh !important;
-						padding: 0 !important;
-						background-color: white; }
+						width: 100vw; min-height: 100vh;
+						margin: 0; padding: 0;
+						background-color: white;
+						overflow-x: hidden; }
 
+/*
 .box-zoomed,
 .slide-detail	 	{	top: 0; left: 0;
 						margin: 0; }
+*/
 
-.slide-detail	 	{	display: none;
-						z-index: 0;
-						
-						position: absolute;
+.slide-detail	 	{	z-index: 0;
 						top: 3*$gutter;
-						float: none;
 						width: 100% - 4*$gutter; height: 100% - 6*$gutter;
-						
-						background-size: contain;
-						transition-duration: 0s;
-						pointer-events: none; }
+						margin: 0;
+						//transition-duration: 0s;
+						pointer-events: none;
+						opacity: 0; }
 
-.slide-detail:not(.slide-active)
-					{	opacity: 0; }
+/// SLIDE TRANSITIONS
 
-
-/// ACTIVE SLIDE
+$duration: 500ms;
 
 .slide-active,
 .slide-prev,
 .slide-next			{	display: block;
-						// box-sizing: border-box; 
-						//background-color: white;
-						transition-property: left, opacity !important;
-						transition-duration: 500ms !important;
-						transition-timing-function: ease-out !important;  }
+						transition-property: left, opacity;
+						transition-duration: $duration;
+						transition-timing-function: ease-out;
+						opacity: 1; }
 
+.slide-active		{	left: 0; pointer-events: auto; }
 .slide-prev			{	left: -100%; }
+.slide-prev-prev		{	left: -200%; }
 .slide-next			{	left: 100%; }
+.slide-next-next		{	left: 200%; }
+
+.prev-out			{	animation: prev-out $duration;
+						animation-fill-mode: forwards;
+						@extend .slide-prev; }
+
+@keyframes prev-out {
+	0%		{	left: -100%; opacity: 1; }
+	100%		{	left: -200%; opacity: 1; }
+}
 
 
-.box-zoomed .slide-active,
-.box-zoomed .slide-prev,
-.box-zoomed .slide-next
-					{	opacity: 1; }
+.prev-to-next		{	animation: prev-next $duration;
+						animation-fill-mode: forwards;
+						animation-timing-function: ease-out;
+						@extend .slide-next; }
+
+.next-to-prev		{	animation: next-prev $duration;
+						animation-fill-mode: forwards;
+						@extend .slide-prev; }
+
+@keyframes prev-next {
+	0%		{	left: -100%; opacity: 1; }
+	25%		{	left: -150%; opacity: 0; }
+	50%		{	left: 150%; opacity: 0; }
+	100%		{	left: 100%; opacity: 1; }
+}
+
+@keyframes next-prev {
+	0%		{	left: 100%; opacity: 1; }
+	25%		{	left: 150%; opacity: 0; }
+	50%		{	left: -150%; opacity: 0; }
+	100%		{	left: -100%; opacity: 1; }
+}
 
 .box-zoomed .slide-active
 					{	left: 2*$gutter;
-						margin: 0; 
-						pointer-events: auto;
 						cursor: zoom-out; }
 
-.loading				{	background-image: url($imgdir+'spiffygif_30x30.gif') !important;
+.box-fade .slide-active,
+.box-fade .slide-prev,
+.box-fade .slide-next	
+					{	left: 0; }				
+.box-fade .slide-prev,
+.box-fade .slide-next	
+					{	opacity: 0; }
+
+
+.loading				{	background-image: url($image_dir+'spiffygif_30x30.gif') !important;
 						background-size: auto; }
 					
 
-
-
-
-
 @media only screen and (max-width: $tablet-portrait) {
 
-	.box-zoomed			{	position: fixed; //overflow: hidden;
-							min-height: 100%; }
+	.box-zoomed			{	min-height: 100%;
+							margin: 0; }
 	.expanded.allow-scroll
 						{	position: static; }
 	
