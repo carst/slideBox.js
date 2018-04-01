@@ -1,4 +1,7 @@
 .codekit-cache
 .sass-cache
+/demo
+/src
 config.codekit3
+index.html
 gulpfile.js

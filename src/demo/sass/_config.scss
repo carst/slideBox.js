@@ -1,7 +1,11 @@
 
+$asset_dir: ''; //'assets/';
+$image_dir: $asset_dir+'images/';
+$font_dir: $asset_dir+'fonts/'; 
+
 /// BREAKPOINTS
 
-$dektop-large: 1280px;
+$desktop-large: 1280px;
 $tablet: 1024px;
 $tablet-portrait: 960px;
 $phone-large: 736px;

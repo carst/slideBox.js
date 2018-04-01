@@ -1,21 +1,210 @@
+var debug = typeof(debug) !== 'undefined' ? debug : false,
+	mobile = typeof(mobile) !== 'undefined' ? mobile : false;
+
+// jshint ignore:start
+var getScriptDir = (function() {
+
+	var scripts = document.getElementsByTagName('script'),
+	scriptPath = scripts[scripts.length-1].src.split('?')[0], // remove any ?query
+	scriptDir = scriptPath.split('/').slice(0, -1).join('/')+'/'; // remove last filename part of path
+
+	return function() { return scriptDir; };
+})();
+
 // jshint ignore: start
 
-// codekit-prepend 'matchMedia.js'
-// codekit-prepend 'defineMobile.js'
-// codekit-prepend 'jquery.mobile-events.js'
+function createState(path, hash, title) {
+	
+	var state = {
+		'path'	: path,
+		'hash'	: hash,
+		'title'	: title
+	}
+	
+	return state;
+	
+}
 
-// @codekit-prepend 'includes/globals.js'
-// @codekit-prepend 'includes/saveState.js'
-// @codekit-prepend 'includes/setBackground.js
-// @codekit-prepend 'includes/jquery.scrollLock.simple.js'
-// @codekit-append 'includes/lazysizes.js'
+
+function getState() {
+	
+	var indexPath = window.location.pathname,
+		query = window.location.search.slice(1),
+		hash = window.location.hash.substring(1),
+		indexTitle = document.title,
+		state = createState(indexPath, hash, indexTitle);
+		
+	if (debug) {
+		console.log('indexPath: ' + indexPath);
+		console.log('hash: ' + hash);
+		console.log('indexTitle: ' + indexTitle);
+	}
+		
+	return state;
+	
+}
+
+
+function createPath(path, slug) {
+	
+	var	pathArray = path.split( '/' ),
+		pathLength = pathArray.length,
+		//newPath = pathLength > 2 ? '/' + pathArray[pathLength-2] + '/' + slug + '/' : '';
+		newPath = path + slug + '/';
+	
+	if (debug) {
+		//console.log('pathArray: ('+pathLength+')');
+		//console.log(pathArray);
+		//console.log('newPath: ' + newPath);
+	}
+	
+	return newPath;
+	
+}
+
+
+function loadState(state) {
+	
+	var itemPath = state.path,
+		itemTitle = state.title;
+	
+	if (debug) {
+		//console.log( 'new hash = ' + slug );
+		console.log( 'itemPath = ' + itemPath );
+		console.log( 'itemTitle = ' + itemTitle );
+	}
+	
+	//document.location.hash = $box.attr('id');
+	if (itemPath !== '') history.pushState('', itemTitle, itemPath);
+	document.title = itemTitle;
+	
+}
+
+
+function resetState() {
+	
+	document.location.hash = '';
+	history.pushState('', indexTitle, indexPath);
+	document.title = indexTitle;
+	
+}
+
+
+function setScroll($box) {
+	
+	var $container = $box.parent();
+	
+	if ($box.hasClass('box-has-content')) { // Allow for vertical scroll
+		$container.addClass('allow-scroll');
+		if (debug) console.log('hello there');
+	} else {
+		$container.removeClass('allow-scroll');
+	}
+
+}
+
+// jshint ignore: start
+
+function setSlideBg($element, defer) {
+		
+	var $isImg = $element.is('img'),
+		$img = $isImg ? $element : $element.find('img'),
+		setBg = !$img.hasClass('bg-set') && !$img.hasClass('no-bg-load'),
+		bgWasSet = false,
+		bgSrc,
+		$bgTarget,
+		fullImg = new Image(),
+		loaded = false;
+	
+	function findBgSrc($img) {
+		
+		var bgSrc,
+			lazyLoadSrc = $img.data('src'),
+			fullSrc = $img.data('srcFull'),
+			fullSrcResp = $img.data('srcFullSl');
+		
+		if (mobile && typeof fullSrcResp !== 'undefined') bgSrc = fullSrcResp;
+		else if (typeof fullSrc !== 'undefined') bgSrc = fullSrc;
+		else if (defer && typeof lazyLoadSrc !== 'undefined') bgSrc = lazyLoadSrc;
+		else if (!$img.hasClass('lazyload')) bgSrc = $img.attr('src');
+		
+		//console.log('defer : ' + defer);
+		//console.log('lazyLoadSrc : ' + lazyLoadSrc);
+		
+		return bgSrc;
+	}
+	
+	function findBgTarget($img) {
+		
+		$bgTarget = $img.hasClass('slide') ? $img : $img.parent();
+	}
+	
+	function loadHandler() {
+		
+		$bgTarget
+			.css('background-image', 'url(' + bgSrc + ')')
+			.addClass('has-bg');
+		
+		$img
+			.removeClass('loading')
+			.addClass('bg-set');
+		
+		bgWasSet = true;
+		
+		if ($bgTarget.is('img')) {
+			//$img.src = '';
+			//console.log($img.attr('class'));
+			$img.attr('src', slideBoxCm.imageDir + 'blank.gif');
+		}
+	}
+	
+	//if ($slide.is('a')) $img = $slide.find('img');
+	if ($img.length > 0 && setBg) {
+		
+		//if (debug) console.log($img);
+		
+		bgSrc = findBgSrc($img);
+		findBgTarget($img);
+		//if (debug) 
+		//console.log('bgSrc : ' + bgSrc);
+		if (typeof bgSrc !== 'undefined') {
+			$img.addClass('loading');
+			fullImg.onload = loadHandler();
+			fullImg.src = bgSrc;
+		}
+	}
+	
+	return bgWasSet;
+	
+}
+
+
+function loadSlideBgs($targetBox) {
+	
+	var config = {
+			slide : '.slide, .load-bg'
+		};
+	
+	var $targetBox = $targetBox === undefined ? $('.box-active') : $targetBox;
+	
+	$targetBox.find(config.slide).each(function() {
+		setSlideBg($(this));
+	});
+	
+}
+
+
+// jshint ignore: start
 
 var slideBoxCm = {
 	initialized : false,
-	imageDir		: typeof(imageDir) !== 'undefined' ? imageDir : './assets/images/'
+	imageDir		: typeof(imageDir) !== 'undefined' ? imageDir : getScriptDir()+'../images/'
 };
 
 function initSlides(settings) {
+	
+	//console.log(getScriptDir());
+	//console.log(slideBoxCm.imageDir);
 
 	if (!slideBoxCm.initialized) {
 		
@@ -37,7 +226,7 @@ function initSlides(settings) {
 
 		$boxes = $(config.slideBox),
 		$boxActive = $(),
-		$boxZoomed = $(),
+		$boxZoomed = $('.box-zoomed'),
 		boxDataCache = [],
 		
 		$slides = $boxes.find(config.slide),
@@ -283,12 +472,12 @@ function initSlides(settings) {
 			}
 		}
 		
-		document.addEventListener('lazybeforeunveil', function(e) {
+		function lazyLoadBg(e) {
 			
 			var element = e.target,
 				$element = $(element),
-				bgWasSet,
-				lazyLoadSrc = $element.data('src');
+				bgWasSet;
+				//lazyLoadSrc = $element.data('src');
 
 			//e.preventDefault();
 			//console.log('lazybeforeunveil');
@@ -296,16 +485,19 @@ function initSlides(settings) {
 			
 			bgWasSet = setSlideBg($element, true);
 			//console.log('bgWasSet '+ bgWasSet);
-			//if ($element.bgWasSet) {
-				e.preventDefault();
-			//}
+			if (bgWasSet) e.preventDefault();
+
 			/*if (!$element.bgWasSet) {
 				$element.attr('src', lazyLoadSrc);
 				//src = addClass('lazyloaded');
 				//lazySizes.loader.unveil(element);
 			}*/
 			
-		});
+		}
+		
+		// Background image laoding for lazyloaded images
+		document.addEventListener('lazybeforeunveil', lazyLoadBg);
+		document.addEventListener('lazyloaded', lazyLoadBg);
 		
 		if (hasYtEmbeds || hasVimeoEmbeds) /// hasHtml5Videos || 
 			document.addEventListener('lazybeforeunveil', doVideoStuff);
@@ -466,7 +658,7 @@ function initSlides(settings) {
 			boxProps.slides.removeClass('slide-prev slide-next prev-to-next next-to-prev');
 			
 			if (nextIsPrev) {
-				console.log('nextIsPrev');
+				//console.log('nextIsPrev');
 				boxProps.nextSlide.clone()
 					.addClass('prev-out')
 					.attr('id', 'slide-copy')
@@ -477,7 +669,7 @@ function initSlides(settings) {
 				boxProps.nextSlide.addClass('slide-next');
 			}
 			if (prevIsNext) {
-				console.log('prevIsNext');
+				//console.log('prevIsNext');
 				boxProps.prevSlide.clone()
 					.insertBefore(boxProps.prevSlide)
 					.addClass('prev-out')
@@ -510,7 +702,7 @@ function initSlides(settings) {
 				boxProps = boxDataCache[boxIndex],
 				$boxSlides = boxProps.slides,
 				$slideActive = boxProps.slideActive,
-				allowChange = $box.hasClass('box-browse') || $box.hasClass('box-zoomed') ||boxProps.isCarousel,
+				allowChange = $box.hasClass('box-zoomed') || boxProps.isCarousel,
 				pos = boxProps.pos,
 				$nextSlide;
 			
@@ -835,3 +1027,64 @@ function initSlides(settings) {
 $(function () {
 	initSlides();
 });
+
+
+$.scrollLock = ( function scrollLockSimple(){
+	var locked   = false;
+	var $body;
+	var previous;
+
+	function lock(){
+	  if( !$body ){
+	    $body = $( 'body' );
+	  }
+	  
+	  previous = $body.css( 'overflow' );
+		
+	  $body.css( 'overflow', 'hidden' );
+
+	  locked = true;
+	}
+
+	function unlock(){
+	  $body.css( 'overflow', previous );
+
+	  locked = false;
+	}
+
+	return function scrollLock( on ) {
+		// If an argument is passed, lock or unlock depending on truthiness
+		if( arguments.length ) {
+			if( on ) {
+				lock();
+			}
+			else {
+				unlock();
+			}
+		}
+		// Otherwise, toggle
+		else {
+			if( locked ){
+				unlock();
+			}
+			else {
+				lock();
+			}
+		}
+	};
+}() );
+
+// jshint ignore: start
+
+// codekit-prepend 'matchMedia.js'
+// codekit-prepend 'defineMobile.js'
+// codekit-prepend 'jquery.mobile-events.js'
+
+// @codekit-prepend 'includes/globals.js'
+// @codekit-prepend 'includes/getScriptDir.js'
+// @codekit-prepend 'includes/saveState.js'
+// @codekit-prepend 'includes/setBackground.js
+// @codekit-prepend 'includes/initSlides.js
+
+// @codekit-prepend 'third-party/jquery.scrollLock.simple.js'
+
