@@ -1,5 +1,6 @@
 {
   "name": "slidebox-js",
+  "version": "1.6.1",
   "description": "A jQuery plugin for easy creation of responsive lightbox-style media galleries and carousels.",
   "main": "slidebox.js",
   "authors": [
@@ -22,10 +23,16 @@
   "homepage": "https://github.com/carst/slideBox.js",
   "ignore": [
     "**/.*",
+    ".codekit-cache",
     "node_modules",
     "bower_components",
+    "/demo/fonts",
+    "/src/demo/media",
     "test",
-    "tests"
+    "tests",
+    "config.codekit3",
+    "README.html",
+    "gulpfile.js"
   ],
   "dependencies": {
     "lazysizes": "^4.0.2"
