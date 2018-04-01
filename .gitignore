@@ -1,4 +1,5 @@
 .codekit-cache
 .sass-cache
+/bower_components
 config.codekit3
 gulpfile.js
