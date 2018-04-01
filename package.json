@@ -1,6 +1,6 @@
 {
   "name": "slidebox-js",
-  "version": "1.0.0",
+  "version": "1.6.0",
   "description": "A jQuery plugin for easy creation of responsive lightbox-style media galleries and carousels.",
   "main": "slidebox.js",
   "repository": {
