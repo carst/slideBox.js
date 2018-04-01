@@ -1,0 +1,33 @@
+{
+  "name": "slidebox-js",
+  "description": "A jQuery plugin for easy creation of responsive lightbox-style media galleries and carousels.",
+  "main": "slidebox.js",
+  "authors": [
+    "Carst vd. Molen <studio@vdmolen.xyz>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "frontend",
+    "lightbox",
+    "slider",
+    "slideshow",
+    "carousel",
+    "carousels",
+    "gallery",
+    "galleries",
+    "lazyload",
+    "jquery",
+    "plugin"
+  ],
+  "homepage": "https://github.com/carst/slideBox.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "lazysizes": "^4.0.2"
+  }
+}
