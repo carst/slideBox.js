@@ -12,8 +12,12 @@ A jQuery plugin for easy creation of responsive lightbox-style media galleries a
 Find the compiled and minified version of the plugin, CSS and images in the directory ‘[dist](https://github.com/carst/slideBox.js/tree/master/dist)’.  
 See [slidebox.vdmolen.xyz](http://slidebox.vdmolen.xyz) for setup and examples.
 
-## NPM
+## Package Managers
 
 Install from npm:
 
-``npm install slidebox-js``
+``npm install slidebox-js --save``
+
+Install from bower:
+
+``bower install slidebox-js --save``
