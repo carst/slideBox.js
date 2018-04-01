@@ -41,7 +41,8 @@ dt, dd				{	float: left; margin-bottom: 1.2em; }
 dt					{	clear: both; width: 30%; }
 dd					{	width: 60%; }
 
-
+dl:after				{	clear: both; display: block;
+						content: ''; }
 
 /// STRUCTURE
 

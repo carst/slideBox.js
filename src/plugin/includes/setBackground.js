@@ -3,8 +3,9 @@
 function setSlideBg($element, defer) {
 		
 	var $isImg = $element.is('img'),
-		$img = $isImg ? $element : $element.children('img'),
-		bgWasSet = $img.hasClass('bg-set'),
+		$img = $isImg ? $element : $element.find('img'),
+		setBg = !$img.hasClass('bg-set') && !$img.hasClass('no-bg-load'),
+		bgWasSet = false,
 		bgSrc,
 		$bgTarget,
 		fullImg = new Image(),
@@ -53,9 +54,9 @@ function setSlideBg($element, defer) {
 	}
 	
 	//if ($slide.is('a')) $img = $slide.find('img');
-	if ($img.length > 0 && !bgWasSet) {
+	if ($img.length > 0 && setBg) {
 		
-		if (debug) console.log($img);
+		//if (debug) console.log($img);
 		
 		bgSrc = findBgSrc($img);
 		findBgTarget($img);
@@ -76,7 +77,7 @@ function setSlideBg($element, defer) {
 function loadSlideBgs($targetBox) {
 	
 	var config = {
-			slide 		: '.slide, .load-bg'
+			slide : '.slide, .load-bg'
 		};
 	
 	var $targetBox = $targetBox === undefined ? $('.box-active') : $targetBox;

@@ -8,8 +8,7 @@
 
 video				{	width: 100%; height: auto;  }
 
-.slide.playing		{	cursor: url($image_dir+'player-pause.svg') 18 18, 
-						url($image_dir+'player-pause.png') 18 18, pointer; }
+.slide.playing		{	cursor: url($image_dir+'player-pause.svg') 18 18, url($image_dir+'player-pause.png') 18 18, pointer; }
 
 
 
