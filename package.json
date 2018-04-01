@@ -7,7 +7,7 @@
     "type": "git",
     "url": "https://github.com/carst/slideBox.js"
   },
-  "homepage": "http://slidebox.vdmolen.xyz"
+  "homepage": "http://slidebox.vdmolen.xyz",
   "author": "Carst vd. Molen <studio@vdmolen.xyz>",
   "license": "MIT",
   "dependencies": {
