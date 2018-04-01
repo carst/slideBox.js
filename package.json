@@ -11,7 +11,7 @@
   "author": "Carst vd. Molen <studio@vdmolen.xyz>",
   "license": "MIT",
   "dependencies": {
-    "jquery": "^1.11.3"
+    "jquery": ">=1.11.3"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
