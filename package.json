@@ -5,7 +5,7 @@
   "main": "slidebox.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/carst/slideBox.js"
+    "url": "https://github.com/carst/slideBox.js.git"
   },
   "homepage": "http://slidebox.vdmolen.xyz",
   "author": "Carst vd. Molen <studio@vdmolen.xyz>",
