@@ -54,7 +54,7 @@ dl:after				{	clear: both; display: block;
 .badge img			{	width: 100%; height: auto; }
 
 
-@media only screen and (max-width: $phone) {
+@media screen and (max-width: $phone) {
 
 	.font-normal			{	font-size: $normal-size-sl; }
 	

@@ -125,7 +125,7 @@ $duration: 500ms;
 						background-size: auto; }
 					
 
-@media only screen and (max-width: $tablet-portrait) {
+@media all and (max-width: $tablet-portrait) {
 
 	.box-zoomed			{	min-height: 100%;
 							margin: 0; }
@@ -142,7 +142,7 @@ $duration: 500ms;
 }
 
 
-@media only screen and (max-width: $phone-large) {
+@media all and (max-width: $phone-large) {
 	
 	.slide-detail		{	top: $gutter-sl/2;
 							height: 100% - 3*$gutter-sl;

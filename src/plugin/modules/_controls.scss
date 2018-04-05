@@ -107,7 +107,7 @@ a.disabled:hover		{	color: rgba(0,0,0,0.0);
 
 .playing .play		{	opacity: 0; pointer-events: none; }
 
-@media only screen and (max-width: $phone-large) {
+@media all and (max-width: $phone-large) {
 	
 	.play,
 	.entry .play		{	opacity: 0; }
