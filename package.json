@@ -1,22 +1,28 @@
 {
   "name": "slidebox-js",
-  "version": "1.6.2",
+  "version": "1.6.3",
   "description": "A jQuery plugin for easy creation of responsive lightbox-style media galleries and carousels.",
   "main": "slidebox.js",
+  "files": [
+    "slidebox.js",
+    "slidebox-lazy.js",
+    "dist/**"
+  ],
   "repository": {
-    "type": "git",
+    "type": "git", 
     "url": "https://github.com/carst/slideBox.js.git"
   },
   "homepage": "http://slidebox.vdmolen.xyz",
   "author": "Carst vd. Molen <studio@vdmolen.xyz>",
   "license": "MIT",
+  "bugs": "https://github.com/carst/slideBox.js/issues",
   "dependencies": {
     "jquery": ">=1.11.3"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-uglify": "^3.0.0",
-    "gulp-rename": "^1.2.2"
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0"
   },
   "engines": {
     "node": ">=0.12.0"
@@ -33,5 +39,6 @@
     "lazyload",
     "jquery",
     "plugin"
-  ]
+  ],
+  "private": false
 }

@@ -1,6 +1,7 @@
 .codekit-cache
 .sass-cache
-/bower_components
+node_modules
+bower_components
 /demo/fonts
 config.codekit3
 gulpfile.js
